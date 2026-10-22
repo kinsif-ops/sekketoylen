@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sekketøylen – En krok. Mindre kaos.</title>
+  <meta name="description" content="Sekketøylen (Sekketoylen) er en smart krok som festes på siden av pulten, slik at sekken eller vesken holdes unna gulvet. Bestill i plast eller metall.">
+  <meta name="theme-color" content="#121a16">
+
+  <!-- Open Graph – legg inn bilde-URL når nettsiden er publisert -->
+  <meta property="og:title" content="Sekketøylen – En krok. Mindre kaos.">
+  <meta property="og:description" content="Den smarte kroken som holder sekken eller vesken unna gulvet og gir bedre plass rundt pulten. Finnes i plast og metall.">
+  <meta property="og:type" content="website">
+  <!-- <meta property="og:image" content="sekketoylen.jpg"> -->
+
+  <!-- Favicon som inline SVG (bytt gjerne ut med egen logo-fil) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23121a16'/%3E%3Cpath d='M12 7v8a5 5 0 0 0 5 5h0a3.5 3.5 0 0 1 0 7' fill='none' stroke='%234fbf7f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Markerer at JavaScript kjører, slik at animasjoner kun skjuler innhold når JS er tilgjengelig -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!--
+    ============================================================
+    BILDER – SLIK LEGGER DERE INN EKTE PRODUKTBILDER
+    Legg bildefilene i SAMME MAPPE som denne HTML-filen, med disse navnene:
+      sekketoylen.jpg          → stort bilde øverst på forsiden
+      sekketoylen-plast.jpg    → bilde av plastvarianten (bestilling)
+      sekketoylen-metall.jpg   → bilde av metallvarianten (bestilling)
+      team-1.jpg … team-5.jpg  → bilder av teammedlemmene (Om oss)
+    Finnes bildet, vises det automatisk. Finnes det ikke, vises illustrasjonen i stedet.
+    ============================================================
+  -->
+
+  <style>
+    /* =========================================================
+       1. DESIGNSYSTEM – endre farger, avstander og former her
+       ========================================================= */
+    :root {
+      /* Farger – grønn profil */
+      --c-ink: #121a16;          /* Primær mørk (tekst, mørke seksjoner) */
+      --c-ink-2: #26332c;        /* Sekundær mørk */
+      --c-muted: #56625b;        /* Dempet brødtekst */
+      --c-line: #e1e4dc;         /* Linjer og rammer */
+      --c-paper: #f6f6f1;        /* Lys bakgrunn */
+      --c-paper-2: #eceee6;      /* Alternativ seksjonsbakgrunn */
+      --c-surface: #ffffff;      /* Kort og flater */
+      --c-accent: #1f6b45;       /* Merkefarge – knapper (god kontrast med hvit tekst) */
+      --c-accent-hover: #17543a; /* Merkefarge hover */
+      --c-accent-bright: #4fbf7f;/* Lys grønn – detaljer og tekst på mørk bakgrunn */
+      --c-accent-soft: #e2f1e7;  /* Lys grønn bakgrunn */
+      --c-accent-rgb: 31, 107, 69; /* Samme som --c-accent, brukt i skygger */
+      --c-on-dark: #f1f3ee;      /* Tekst på mørk bakgrunn */
+      --c-on-dark-muted: #a6b0aa;
+      --c-success: #15803d;
+      --c-error: #b91c1c;
+
+      /* Typografi (systemfonter = rask lasting, ingen eksterne kall) */
+      --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --fs-xs: 0.8125rem;
+      --fs-sm: 0.9375rem;
+      --fs-base: 1.0625rem;
+      --fs-lg: 1.25rem;
+      --fs-xl: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
+      --fs-2xl: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+      --fs-hero: clamp(2.75rem, 1.6rem + 5vw, 5.25rem);
+
+      /* Avstander */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.5rem;
+      --space-6: 2rem;
+      --space-7: 3rem;
+      --space-8: 4rem;
+      --section-y: clamp(4.5rem, 3rem + 6vw, 8rem);
+
+      /* Form */
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 28px;
+      --radius-pill: 999px;
+
+      /* Skygger */
+      --shadow-sm: 0 1px 2px rgba(18, 26, 22, .06), 0 1px 1px rgba(18, 26, 22, .04);
+      --shadow: 0 10px 30px -12px rgba(18, 26, 22, .18), 0 2px 6px rgba(18, 26, 22, .05);
+      --shadow-lg: 0 30px 60px -24px rgba(18, 26, 22, .30);
+
+      /* Layout */
+      --container: 1180px;
+      --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+      --header-h: 72px;
+
+      /* Bevegelse */
+      --ease: cubic-bezier(.2, .7, .2, 1);
+      --dur: 220ms;
+    }
+
+    /* =========================================================
+       2. GRUNNSTIL
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-h) + 8px);
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: var(--fs-base);
+      line-height: 1.65;
+      color: var(--c-ink);
+      background: var(--c-paper);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body.nav-open { overflow: hidden; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3, h4 { margin: 0; line-height: 1.12; letter-spacing: -0.025em; font-weight: 700; }
+    p { margin: 0; }
+    ul, ol { margin: 0; padding: 0; list-style: none; }
+    fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+
+    :focus-visible {
+      outline: 3px solid var(--c-accent-bright);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .section { padding-block: var(--section-y); }
+    .section--alt { background: var(--c-paper-2); }
+    .section--dark { background: var(--c-ink); color: var(--c-on-dark); }
+
+    /* Hopp til innhold (tilgjengelighet) */
+    .skip-link {
+      position: absolute; left: var(--space-4); top: -100px; z-index: 200;
+      background: var(--c-ink); color: #fff; padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-sm); text-decoration: none; font-weight: 600;
+    }
+    .skip-link:focus { top: var(--space-4); }
+
+    /* Seksjonsoverskrifter */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--c-accent);
+    }
+    .eyebrow::before { content: ""; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
+    .section--dark .eyebrow { color: var(--c-accent-bright); }
+
+    .section-head { max-width: 720px; margin-bottom: var(--space-7); }
+    .section-head--center { margin-inline: auto; text-align: center; }
+    .section-head h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+    .section-head p { margin-top: var(--space-4); color: var(--c-muted); font-size: var(--fs-lg); }
+    .section--dark .section-head p { color: var(--c-on-dark-muted); }
+
+    /* Felt som skal fylles inn (navn, priser, kontaktinfo) – lett å se og lett å finne i koden */
+    .placeholder {
+      color: var(--c-muted);
+      background: repeating-linear-gradient(-45deg, transparent 0 6px, rgba(var(--c-accent-rgb), .07) 6px 12px);
+      border-bottom: 1px dashed var(--c-accent);
+      padding-inline: 2px;
+    }
+    .section--dark .placeholder, .site-footer .placeholder { color: var(--c-on-dark-muted); border-color: var(--c-accent-bright); }
+
+    /* Illustrasjonsfarger følger designsystemet */
+    .ill-accent { fill: var(--c-accent); }
+    .ill-accent-stroke { stroke: var(--c-accent); }
+    .ill-soft { fill: var(--c-accent-bright); }
+
+    /* Ekte bilder legges oppå illustrasjonen når bildefilen finnes */
+    .photo-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    /* =========================================================
+       3. KNAPPER
+       ========================================================= */
+    .btn {
+      --btn-bg: var(--c-accent);
+      --btn-fg: #fff;
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+      min-height: 50px; padding: 0 var(--space-5);
+      font: inherit; font-size: var(--fs-sm); font-weight: 650; letter-spacing: .005em;
+      color: var(--btn-fg); background: var(--btn-bg);
+      border: 1.5px solid transparent; border-radius: var(--radius-pill);
+      text-decoration: none; cursor: pointer; white-space: nowrap;
+      transition: transform var(--dur) var(--ease), background-color var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+      box-shadow: 0 8px 20px -10px rgba(var(--c-accent-rgb), .7);
+    }
+    .btn:hover { background: var(--c-accent-hover); transform: translateY(-2px); box-shadow: 0 14px 26px -12px rgba(var(--c-accent-rgb), .8); }
+    .btn:active { transform: translateY(0); }
+    .btn:disabled { opacity: .6; cursor: progress; transform: none; }
+    .btn svg { width: 18px; height: 18px; transition: transform var(--dur) var(--ease); }
+    .btn:hover svg { transform: translateX(3px); }
+
+    .btn--ghost { --btn-bg: transparent; --btn-fg: var(--c-ink); border-color: rgba(18, 26, 22, .2); box-shadow: none; }
+    .btn--ghost:hover { background: var(--c-ink); color: #fff; border-color: var(--c-ink); box-shadow: var(--shadow); }
+
+    .btn--sm { min-height: 42px; padding: 0 var(--space-4); }
+    .btn--block { width: 100%; }
+
+    /* =========================================================
+       4. HEADER OG NAVIGASJON
+       ========================================================= */
+    .site-header {
+      position: fixed; inset: 0 0 auto 0; z-index: 100;
+      height: var(--header-h);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+    }
+    /* Uskarp bakgrunn ligger på et eget lag, slik at mobilmenyen kan dekke hele skjermen */
+    .site-header::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: rgba(246, 246, 241, .78);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      transition: background-color var(--dur) var(--ease);
+    }
+    .site-header.is-scrolled {
+      border-bottom-color: var(--c-line);
+      box-shadow: 0 6px 24px -18px rgba(18, 26, 22, .35);
+    }
+    .site-header.is-scrolled::before { background: rgba(246, 246, 241, .92); }
+    .nav { height: 100%; display: flex; align-items: center; gap: var(--space-5); }
+
+    .logo { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; font-weight: 750; font-size: 1.125rem; letter-spacing: -0.02em; }
+    .logo__mark { width: 36px; height: 36px; flex-shrink: 0; }
+    .logo__bg { fill: var(--c-ink); }
+    .logo__hook { stroke: var(--c-accent-bright); }
+    .logo--light .logo__bg { fill: #fff; }
+    .logo--light .logo__hook { stroke: var(--c-accent); }
+
+    .nav__menu { margin-left: auto; }
+    .nav__links { display: flex; align-items: center; gap: var(--space-1); }
+    .nav__links a {
+      position: relative; display: inline-block;
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--fs-sm); font-weight: 550; color: var(--c-ink-2); text-decoration: none;
+      border-radius: var(--radius-pill);
+      transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+    }
+    .nav__links a:hover { background: rgba(18, 26, 22, .06); color: var(--c-ink); }
+    .nav__links a.is-active { color: var(--c-ink); }
+    .nav__links a.is-active::after {
+      content: ""; position: absolute; left: 50%; bottom: 2px; width: 5px; height: 5px;
+      border-radius: 50%; background: var(--c-accent); transform: translateX(-50%);
+    }
+
+    /* Kjøp-knapp + hamburger: alltid synlig til høyre i headeren */
+    .nav__actions { display: flex; align-items: center; gap: var(--space-3); position: relative; z-index: 120; }
+    .nav__cart svg { width: 18px; height: 18px; }
+    .nav__cart:hover svg { transform: none; }
+
+    /* Hamburger */
+    .nav__toggle {
+      display: none; width: 44px; height: 44px; padding: 0;
+      border: 1px solid var(--c-line); border-radius: 50%; background: var(--c-surface);
+      cursor: pointer; position: relative;
+    }
+    .nav__toggle span {
+      position: absolute; left: 50%; width: 18px; height: 2px; border-radius: 2px;
+      background: var(--c-ink); transform: translateX(-50%);
+      transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease), top var(--dur) var(--ease);
+    }
+    .nav__toggle span:nth-child(1) { top: 15px; }
+    .nav__toggle span:nth-child(2) { top: 21px; }
+    .nav__toggle span:nth-child(3) { top: 27px; }
+    .nav__toggle[aria-expanded="true"] span:nth-child(1) { top: 21px; transform: translateX(-50%) rotate(45deg); }
+    .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__toggle[aria-expanded="true"] span:nth-child(3) { top: 21px; transform: translateX(-50%) rotate(-45deg); }
+
+    @media (max-width: 960px) {
+      .nav__toggle { display: block; }
+      .nav__actions { margin-left: auto; }
+      .nav__menu {
+        position: fixed; inset: 0; z-index: 110; margin: 0;
+        display: flex; flex-direction: column; justify-content: center;
+        padding: calc(var(--header-h) + var(--space-5)) var(--gutter) var(--space-7);
+        background: var(--c-paper);
+        opacity: 0; visibility: hidden; transform: translateY(-8px);
+        transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility 0s linear var(--dur);
+      }
+      .nav__menu.is-open {
+        opacity: 1; visibility: visible; transform: none;
+        transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+      }
+      .nav__links { flex-direction: column; align-items: stretch; gap: 0; }
+      .nav__links a {
+        display: block;
+        font-size: 1.75rem; font-weight: 650; letter-spacing: -0.02em;
+        padding: var(--space-3) 0; border-radius: 0; border-bottom: 1px solid var(--c-line);
+      }
+      .nav__links a:hover { background: none; color: var(--c-accent); }
+      .nav__links a.is-active::after { display: none; }
+    }
+    @media (max-width: 380px) {
+      .logo span { font-size: 1rem; }
+      .nav__cart .label-long { display: none; }
+    }
+    @media (min-width: 381px) { .nav__cart .label-short { display: none; } }
+
+    /* =========================================================
+       5. HERO
+       ========================================================= */
+    .hero {
+      position: relative; overflow: hidden;
+      padding-top: calc(var(--header-h) + clamp(2.5rem, 1rem + 5vw, 5.5rem));
+      padding-bottom: var(--section-y);
+    }
+    .hero::before {
+      content: ""; position: absolute; z-index: -1;
+      width: 900px; height: 900px; right: -320px; top: -300px;
+      background: radial-gradient(circle, rgba(79, 191, 127, .16), transparent 62%);
+      pointer-events: none;
+    }
+    .hero__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: center; }
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: 6px 14px 6px 8px; border-radius: var(--radius-pill);
+      background: var(--c-surface); border: 1px solid var(--c-line); box-shadow: var(--shadow-sm);
+      font-size: var(--fs-xs); font-weight: 600; color: var(--c-ink-2);
+    }
+    .hero__badge-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--c-accent-soft); display: grid; place-items: center; }
+    .hero__badge-dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); }
+    .hero h1 { font-size: var(--fs-hero); letter-spacing: -0.045em; line-height: .98; margin-top: var(--space-5); }
+    .hero h1 .accent { color: var(--c-accent); }
+    .hero__lead { margin-top: var(--space-5); max-width: 34rem; font-size: var(--fs-lg); color: var(--c-muted); }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+    .hero__points { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); margin-top: var(--space-6); font-size: var(--fs-sm); color: var(--c-ink-2); font-weight: 550; }
+    .hero__points li { display: inline-flex; align-items: center; gap: var(--space-2); }
+    .hero__points svg { width: 18px; height: 18px; color: var(--c-accent); }
+
+    .product-visual {
+      position: relative; margin: 0;
+      aspect-ratio: 1 / 0.92;
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, .9), transparent 55%),
+        linear-gradient(160deg, #ffffff 0%, #e9ede4 100%);
+      border: 1px solid var(--c-line);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .product-visual > svg { width: 100%; height: 100%; }
+    .float { animation: float 6s ease-in-out infinite; transform-origin: 445px 135px; }
+    @keyframes float { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-1.4deg); } }
+
+    @media (max-width: 900px) {
+      .hero__grid { grid-template-columns: 1fr; }
+      .hero__visual { max-width: 560px; }
+    }
+
+    /* =========================================================
+       6. PROBLEMET
+       ========================================================= */
+    .problem__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
+    .problem__text h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+    .problem__text p { margin-top: var(--space-4); color: var(--c-muted); font-size: var(--fs-lg); }
+    .problem__list { display: grid; gap: var(--space-3); }
+    .problem__item {
+      display: flex; gap: var(--space-4); align-items: flex-start;
+      padding: var(--space-5); background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius);
+    }
+    .problem__item .icon-x { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #f0f1ec; color: var(--c-muted); }
+    .problem__item .icon-x svg { width: 16px; height: 16px; }
+    .problem__item h3 { font-size: 1.0625rem; }
+    .problem__item p { font-size: var(--fs-sm); color: var(--c-muted); margin-top: 2px; }
+    .solution {
+      margin-top: var(--space-3);
+      display: flex; gap: var(--space-4); align-items: center;
+      padding: var(--space-5) var(--space-6); border-radius: var(--radius);
+      background: var(--c-ink); color: var(--c-on-dark);
+    }
+    .solution__icon { flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--c-accent); color: #fff; }
+    .solution__icon svg { width: 24px; height: 24px; }
+    .solution strong { display: block; font-size: var(--fs-lg); letter-spacing: -0.01em; }
+    .solution span { color: var(--c-on-dark-muted); font-size: var(--fs-sm); }
+    @media (max-width: 860px) { .problem__grid { grid-template-columns: 1fr; } }
+
+    /* =========================================================
+       7. PRODUKTET / FORDELER
+       ========================================================= */
+    .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+    .feature {
+      position: relative; padding: var(--space-6) var(--space-5);
+      background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius);
+      transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+    .feature:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+    .feature__icon {
+      width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center;
+      background: var(--c-accent-soft); color: var(--c-accent); margin-bottom: var(--space-5);
+      transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+    }
+    .feature:hover .feature__icon { background: var(--c-accent); color: #fff; }
+    .feature__icon svg { width: 24px; height: 24px; }
+    .feature h3 { font-size: 1.125rem; }
+    .feature p { margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-muted); }
+    .feature--wide {
+      grid-column: span 2; background: var(--c-ink); color: var(--c-on-dark); border-color: var(--c-ink);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .feature--wide p { color: var(--c-on-dark-muted); }
+    .feature--wide .feature__icon { background: rgba(79, 191, 127, .16); color: var(--c-accent-bright); }
+    .feature--wide:hover .feature__icon { background: var(--c-accent-bright); color: var(--c-ink); }
+    @media (max-width: 1024px) { .features { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .features { grid-template-columns: 1fr; } .feature--wide { grid-column: auto; } }
+
+    /* =========================================================
+       8. SLIK FUNGERER DET
+       ========================================================= */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+    .step {
+      position: relative; padding: var(--space-6); border-radius: var(--radius);
+      background: var(--c-surface); border: 1px solid var(--c-line);
+      transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+    }
+    .step:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .step__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6); }
+    .step__num { font-size: 3.25rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--c-line); }
+    .step:hover .step__num { -webkit-text-stroke-color: var(--c-accent); }
+    .step__icon { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--c-ink); color: #fff; }
+    .step__icon svg { width: 26px; height: 26px; }
+    .step h3 { font-size: var(--fs-xl); }
+    .step p { margin-top: var(--space-3); color: var(--c-muted); }
+    @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+
+    /* =========================================================
+       9. BESTILL
+       ========================================================= */
+    .order { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-5); align-items: start; }
+    .order__panel {
+      background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-lg);
+      padding: clamp(1.25rem, 0.8rem + 2vw, 2rem);
+    }
+    .order__details { position: sticky; top: calc(var(--header-h) + var(--space-5)); display: grid; gap: var(--space-4); box-shadow: var(--shadow); }
+    .order__label {
+      display: block; margin-bottom: var(--space-4);
+      font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-muted);
+    }
+
+    /* Variantvalg (plast / metall) */
+    .variants__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+    .variant {
+      position: relative; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;
+      border: 2px solid var(--c-line); border-radius: var(--radius); background: var(--c-paper);
+      transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease), background-color var(--dur) var(--ease);
+    }
+    .variant:hover { border-color: #c5ccbf; transform: translateY(-2px); }
+    .variant.is-selected { border-color: var(--c-accent); background: #fff; box-shadow: 0 0 0 4px rgba(var(--c-accent-rgb), .12); }
+    .variant input { position: absolute; opacity: 0; pointer-events: none; }
+    .variant:has(input:focus-visible) { outline: 3px solid var(--c-accent-bright); outline-offset: 3px; }
+    .variant__media {
+      position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center;
+      background: linear-gradient(160deg, #ffffff, #e8ebe3);
+    }
+    .variant__media svg { width: 52%; height: auto; }
+    .variant__body { display: grid; gap: 2px; padding: var(--space-4); }
+    .variant__name { font-weight: 700; font-size: 1.0625rem; letter-spacing: -0.01em; }
+    .variant__desc { font-size: var(--fs-sm); color: var(--c-muted); }
+    .variant__price { margin-top: var(--space-2); font-weight: 750; font-size: var(--fs-lg); }
+    .variant__check {
+      position: absolute; top: 12px; right: 12px; z-index: 1;
+      width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+      border: 2px solid var(--c-line); background: #fff;
+      transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+    .variant__check svg { width: 14px; height: 14px; color: #fff; opacity: 0; transition: opacity var(--dur) var(--ease); }
+    .variant.is-selected .variant__check { background: var(--c-accent); border-color: var(--c-accent); }
+    .variant.is-selected .variant__check svg { opacity: 1; }
+
+    /* Antall */
+    .qty { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); }
+    .qty .order__label { margin: 0; }
+    .qty__control { display: inline-flex; align-items: center; border: 1.5px solid var(--c-line); border-radius: var(--radius-pill); background: var(--c-paper); }
+    .qty__control button {
+      width: 46px; height: 46px; border: 0; border-radius: 50%; background: none; cursor: pointer;
+      font: inherit; font-size: 1.375rem; line-height: 1; color: var(--c-ink);
+      transition: background-color var(--dur) var(--ease);
+    }
+    .qty__control button:hover { background: rgba(18, 26, 22, .07); }
+    .qty__control input {
+      width: 52px; border: 0; background: none; text-align: center;
+      font: inherit; font-size: var(--fs-lg); font-weight: 700; color: var(--c-ink);
+      -moz-appearance: textfield; appearance: textfield;
+    }
+    .qty__control input::-webkit-outer-spin-button,
+    .qty__control input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+    .order__included { display: grid; gap: var(--space-2); margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--c-line); font-size: var(--fs-sm); color: var(--c-ink-2); }
+    .order__included li { display: flex; align-items: center; gap: var(--space-2); }
+    .order__included svg { width: 18px; height: 18px; color: var(--c-accent); flex-shrink: 0; }
+
+    /* Oppsummering */
+    .summary { display: grid; gap: var(--space-2); padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--c-paper); font-size: var(--fs-sm); }
+    .summary__row { display: flex; justify-content: space-between; gap: var(--space-3); }
+    .summary__row span:first-child { color: var(--c-muted); }
+    .summary__row--total { margin-top: var(--space-1); padding-top: var(--space-3); border-top: 1px solid var(--c-line); font-size: var(--fs-base); font-weight: 750; }
+    .summary__row--total span:first-child { color: var(--c-ink); }
+
+    @media (max-width: 960px) {
+      .order { grid-template-columns: 1fr; }
+      .order__details { position: static; }
+    }
+    @media (max-width: 420px) { .variants__grid { gap: var(--space-3); } .variant__body { padding: var(--space-3); } }
+
+    /* =========================================================
+       10. UTVIKLING (tidslinje)
+       ========================================================= */
+    .dev__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
+    .dev__intro { position: sticky; top: calc(var(--header-h) + var(--space-6)); }
+    .dev__intro h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+    .dev__intro p { margin-top: var(--space-4); color: var(--c-muted); font-size: var(--fs-lg); }
+    .timeline { position: relative; display: grid; gap: var(--space-4); }
+    .timeline::before { content: ""; position: absolute; left: 23px; top: 24px; bottom: 24px; width: 2px; background: var(--c-line); }
+    .tl-item { position: relative; display: grid; grid-template-columns: 48px 1fr; gap: var(--space-5); align-items: start; }
+    .tl-item__dot {
+      position: relative; z-index: 1; width: 48px; height: 48px; border-radius: 50%;
+      display: grid; place-items: center; font-weight: 750; font-size: var(--fs-sm);
+      background: var(--c-ink); border: 2px solid var(--c-ink); color: #fff;
+    }
+    .tl-item--final .tl-item__dot { background: var(--c-accent); border-color: var(--c-accent); box-shadow: 0 0 0 6px rgba(var(--c-accent-rgb), .14); }
+    .tl-item--final .tl-item__dot svg { width: 20px; height: 20px; }
+    .tl-item__card { padding: var(--space-5); border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-line); }
+    .tl-item--final .tl-item__card { border-color: var(--c-accent); }
+    .tl-item__card h3 { font-size: 1.125rem; }
+    .tl-item__card p { margin-top: var(--space-2); color: var(--c-muted); font-size: var(--fs-sm); }
+    .tl-item__card .btn { margin-top: var(--space-4); }
+    @media (max-width: 860px) { .dev__grid { grid-template-columns: 1fr; } .dev__intro { position: static; } }
+
+    /* =========================================================
+       11. BÆREKRAFT
+       ========================================================= */
+    .sustain { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: center; }
+    .sustain__intro h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+    .sustain__intro p { margin-top: var(--space-4); color: var(--c-on-dark-muted); font-size: var(--fs-lg); }
+    .sustain__list { display: grid; border-top: 1px solid rgba(255, 255, 255, .12); }
+    .sustain__list li {
+      display: flex; align-items: center; gap: var(--space-4);
+      padding: var(--space-5) 0; border-bottom: 1px solid rgba(255, 255, 255, .12);
+      font-size: var(--fs-lg); font-weight: 600; letter-spacing: -0.01em;
+      transition: padding-left var(--dur) var(--ease), color var(--dur) var(--ease);
+    }
+    .sustain__list li:hover { padding-left: var(--space-3); color: #fff; }
+    .sustain__list .n { font-size: var(--fs-xs); font-weight: 700; color: var(--c-accent-bright); min-width: 28px; letter-spacing: .05em; }
+    @media (max-width: 860px) { .sustain { grid-template-columns: 1fr; } }
+
+    /* =========================================================
+       12. OM OSS
+       ========================================================= */
+    .about__head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 1rem + 3vw, 4rem); align-items: end; margin-bottom: var(--space-7); }
+    .about__head h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+    .about__head p { color: var(--c-muted); font-size: var(--fs-lg); }
+    .about__head p + p { margin-top: var(--space-3); }
+
+    .team { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); }
+    .member {
+      flex: 0 1 calc((100% - 4 * var(--space-4)) / 5); min-width: 0;
+      padding: var(--space-3) var(--space-3) var(--space-4);
+      border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-line);
+      transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+    }
+    .member:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .member__photo {
+      position: relative; aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden;
+      display: grid; place-items: center;
+      background: linear-gradient(160deg, #eef1e9, #dfe4d9); color: #a9b3a7;
+    }
+    .member__photo svg { width: 40%; height: 40%; }
+    .member h3 { font-size: 1rem; margin-top: var(--space-3); padding-inline: var(--space-1); }
+    .member p { font-size: var(--fs-sm); color: var(--c-muted); padding-inline: var(--space-1); }
+    @media (max-width: 960px) { .member { flex-basis: calc((100% - 2 * var(--space-4)) / 3); } }
+    @media (max-width: 860px) { .about__head { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .member { flex-basis: calc((100% - var(--space-4)) / 2); } }
+
+    /* =========================================================
+       13. FOR BEDRIFTER OG SKOLER
+       ========================================================= */
+    .b2b {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 1rem + 4vw, 4rem);
+      padding: clamp(2rem, 1rem + 4vw, 4rem);
+      background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-lg); box-shadow: var(--shadow);
+    }
+    .b2b h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+    .b2b__lead { margin-top: var(--space-4); color: var(--c-muted); font-size: var(--fs-lg); }
+    .b2b__segments { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
+    .chip { padding: 6px 14px; border-radius: var(--radius-pill); border: 1px solid var(--c-line); font-size: var(--fs-sm); font-weight: 550; background: var(--c-paper); }
+    .b2b .btn { margin-top: var(--space-6); white-space: normal; text-align: center; }
+    .b2b__benefits { display: grid; gap: var(--space-3); align-content: center; }
+    .b2b__benefit { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--c-paper); }
+    .b2b__benefit svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--c-accent); }
+    .b2b__benefit span { font-weight: 600; }
+    @media (max-width: 860px) { .b2b { grid-template-columns: 1fr; } }
+
+    /* =========================================================
+       14. SKJEMAFELT (brukes av både bestilling og kontakt)
+       ========================================================= */
+    .field { display: grid; gap: var(--space-2); }
+    .field label { font-size: var(--fs-sm); font-weight: 600; }
+    .field label .req { color: var(--c-accent); }
+    .field label .opt { color: var(--c-muted); font-weight: 500; }
+    .field input, .field textarea, .field select {
+      width: 100%; font: inherit; font-size: var(--fs-base); color: var(--c-ink);
+      padding: 13px 16px; border-radius: var(--radius-sm);
+      border: 1.5px solid var(--c-line); background: var(--c-paper);
+      transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background-color var(--dur) var(--ease);
+    }
+    .field select {
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356625b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; background-size: 18px; padding-right: 44px;
+    }
+    .field textarea { min-height: 130px; resize: vertical; }
+    .field textarea.short { min-height: 84px; }
+    .field input:hover, .field textarea:hover, .field select:hover { border-color: #c9cfc3; }
+    .field input:focus, .field textarea:focus, .field select:focus {
+      outline: none; border-color: var(--c-accent); background: #fff;
+      box-shadow: 0 0 0 4px rgba(var(--c-accent-rgb), .15);
+    }
+    .field.has-error input, .field.has-error textarea { border-color: var(--c-error); }
+    .field__error { font-size: var(--fs-xs); color: var(--c-error); font-weight: 600; }
+    .field__error:empty { display: none; }
+    .form__note { font-size: var(--fs-xs); color: var(--c-muted); }
+    .form__status { display: none; padding: var(--space-4); border-radius: var(--radius-sm); font-size: var(--fs-sm); font-weight: 600; }
+    .form__status.is-success { display: block; background: #e6f4ea; color: var(--c-success); }
+    .form__status.is-error { display: block; background: #fdecec; color: var(--c-error); }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+    @media (max-width: 560px) { .form__row { grid-template-columns: 1fr; } }
+
+    /* =========================================================
+       15. KONTAKT
+       ========================================================= */
+    .contact { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
+    .contact__info h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+    .contact__info > p { margin-top: var(--space-4); color: var(--c-muted); font-size: var(--fs-lg); }
+    .contact__list { margin-top: var(--space-6); display: grid; gap: var(--space-3); }
+    .contact__list li { display: flex; align-items: center; gap: var(--space-4); }
+    .contact__list .ci { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--c-surface); border: 1px solid var(--c-line); flex-shrink: 0; }
+    .contact__list .ci svg { width: 20px; height: 20px; color: var(--c-accent); }
+    .contact__list small { display: block; font-size: var(--fs-xs); color: var(--c-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+    .socials { display: flex; gap: var(--space-2); margin-top: var(--space-6); }
+    .socials a {
+      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid var(--c-line); background: var(--c-surface); color: var(--c-ink);
+      transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+    .socials a:hover { background: var(--c-ink); color: #fff; border-color: var(--c-ink); transform: translateY(-2px); }
+    .socials svg { width: 18px; height: 18px; }
+
+    .form {
+      padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); border-radius: var(--radius-lg);
+      background: var(--c-surface); border: 1px solid var(--c-line); box-shadow: var(--shadow);
+      display: grid; gap: var(--space-5);
+    }
+    @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+
+    /* =========================================================
+       16. FOOTER
+       ========================================================= */
+    .site-footer { background: var(--c-ink); color: var(--c-on-dark); padding-block: var(--space-8) var(--space-6); }
+    .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--space-6); }
+    .site-footer .logo { color: #fff; }
+    .footer__about { margin-top: var(--space-4); max-width: 22rem; color: var(--c-on-dark-muted); font-size: var(--fs-sm); }
+    .footer__alt { margin-top: var(--space-3); font-size: var(--fs-xs); color: #7c867f; }
+    .site-footer h4 { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .12em; color: var(--c-on-dark-muted); margin-bottom: var(--space-4); font-weight: 700; }
+    .footer__links { display: grid; gap: var(--space-2); }
+    .footer__links a, .footer__links span { font-size: var(--fs-sm); color: var(--c-on-dark); text-decoration: none; opacity: .88; transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease); }
+    .footer__links a:hover { opacity: 1; color: var(--c-accent-bright); }
+    .site-footer .socials { margin-top: 0; }
+    .site-footer .socials a { background: transparent; border-color: rgba(255, 255, 255, .16); color: var(--c-on-dark); }
+    .site-footer .socials a:hover { background: var(--c-accent-bright); border-color: var(--c-accent-bright); color: var(--c-ink); }
+    .footer__bottom {
+      margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255, 255, 255, .1);
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3);
+      font-size: var(--fs-xs); color: var(--c-on-dark-muted);
+    }
+    .footer__bottom a { color: var(--c-on-dark-muted); text-decoration: none; }
+    .footer__bottom a:hover { color: #fff; }
+    @media (max-width: 860px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__brand { grid-column: 1 / -1; } }
+    @media (max-width: 480px) { .footer__grid { grid-template-columns: 1fr; } }
+
+    /* =========================================================
+       17. ANIMASJONER VED SCROLL
+       ========================================================= */
+    .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+    .js .reveal[data-delay="1"] { transition-delay: .08s; }
+    .js .reveal[data-delay="2"] { transition-delay: .16s; }
+    .js .reveal[data-delay="3"] { transition-delay: .24s; }
+    .js .reveal[data-delay="4"] { transition-delay: .32s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#hovedinnhold">Hopp til innhold</a>
+
+  <!-- =========================================================
+       HEADER / NAVIGASJON
+       ========================================================= -->
+  <header class="site-header" id="header">
+    <nav class="nav container" aria-label="Hovedmeny">
+      <a href="#hjem" class="logo" aria-label="Sekketøylen – til forsiden">
+        <svg class="logo__mark" viewBox="0 0 36 36" aria-hidden="true">
+          <rect class="logo__bg" width="36" height="36" rx="10"/>
+          <path class="logo__hook" d="M14 8v9a5.5 5.5 0 0 0 5.5 5.5h0a4 4 0 0 1 0 8" fill="none" stroke-width="3.2" stroke-linecap="round"/>
+        </svg>
+        <span>Sekketøylen</span>
+      </a>
+
+      <div class="nav__menu" id="navMenu">
+        <ul class="nav__links">
+          <li><a href="#hjem" data-nav>Hjem</a></li>
+          <li><a href="#produktet" data-nav>Produktet</a></li>
+          <li><a href="#slik-fungerer-det" data-nav>Slik fungerer det</a></li>
+          <li><a href="#om-oss" data-nav>Om oss</a></li>
+          <li><a href="#bedrift" data-nav>Bedrift</a></li>
+          <li><a href="#kontakt" data-nav>Kontakt</a></li>
+        </ul>
+      </div>
+
+      <!-- Kjøp-knappen står alltid synlig til høyre – også på mobil, ved siden av menyknappen -->
+      <div class="nav__actions">
+        <a href="#bestill" class="btn btn--sm nav__cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="label-long">Kjøp nå</span><span class="label-short">Kjøp</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Åpne meny">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="hovedinnhold">
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+    <section class="hero" id="hjem" aria-labelledby="hero-tittel">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__badge reveal"><span class="hero__badge-dot" aria-hidden="true"></span>Krok for pult · I plast eller metall</span>
+          <h1 id="hero-tittel" class="reveal" data-delay="1">En Krok.<br><span class="accent">Mindre Kaos</span></h1>
+          <p class="hero__lead reveal" data-delay="2">Sekketøylen er den smarte kroken som holder sekken eller vesken unna gulvet og gir deg bedre plass rundt pulten.</p>
+          <div class="hero__actions reveal" data-delay="3">
+            <a href="#produktet" class="btn">
+              Se produktet
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#bedrift" class="btn btn--ghost">For bedrifter og skoler</a>
+          </div>
+          <ul class="hero__points reveal" data-delay="3">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Skrus fast</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gummibeskyttelse</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Plast eller metall</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" data-delay="2">
+          <!-- PRODUKTBILDE: legg «sekketoylen.jpg» i samme mappe, så vises det her automatisk -->
+          <figure class="product-visual">
+            <svg viewBox="0 0 520 440" role="img" aria-label="Illustrasjon av Sekketøylen festet på siden av en pult med en sekk som henger over gulvet">
+              <line x1="20" y1="410" x2="500" y2="410" stroke="#d3d8cd" stroke-width="2" stroke-dasharray="4 8"/>
+              <rect x="30" y="118" width="342" height="26" rx="6" fill="#121a16"/>
+              <rect x="290" y="144" width="20" height="266" rx="3" fill="#26332c"/>
+              <rect x="60" y="144" width="20" height="266" rx="3" fill="#26332c" opacity=".35"/>
+              <g class="float">
+                <rect x="372" y="114" width="6" height="34" rx="2" fill="#26332c"/>
+                <rect class="ill-accent" x="378" y="110" width="14" height="42" rx="4"/>
+                <circle cx="385" cy="120" r="2.2" fill="#e2f1e7"/>
+                <circle cx="385" cy="142" r="2.2" fill="#e2f1e7"/>
+                <path class="ill-accent-stroke" d="M392 131 H420 Q446 131 446 157 V188 Q446 214 422 214 Q404 214 404 198" fill="none" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M408 286 C408 236 414 216 425 216 C436 216 444 236 444 286" fill="none" stroke="#56625b" stroke-width="5" stroke-linecap="round"/>
+                <rect x="378" y="262" width="96" height="112" rx="26" fill="#ffffff" stroke="#56625b" stroke-width="3"/>
+                <rect x="396" y="314" width="60" height="40" rx="12" fill="none" stroke="#56625b" stroke-width="2.5"/>
+                <line x1="410" y1="326" x2="442" y2="326" stroke="#56625b" stroke-width="2.5" stroke-linecap="round"/>
+              </g>
+              <g class="ill-accent-stroke" stroke-width="2">
+                <line x1="492" y1="378" x2="492" y2="404"/>
+                <line x1="486" y1="378" x2="498" y2="378"/>
+                <line x1="486" y1="404" x2="498" y2="404"/>
+              </g>
+              <text x="40" y="70" font-family="system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.6" fill="#56625b">SEKKETØYLEN</text>
+              <text x="40" y="92" font-family="system-ui, sans-serif" font-size="13" fill="#929c95">Krok for siden av pulten</text>
+            </svg>
+            <img class="photo-cover" src="sekketoylen.jpg" alt="Sekketøylen festet på siden av en pult" onerror="this.remove()">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROBLEMET VI LØSER
+         ========================================================= -->
+    <section class="section section--alt" id="problemet" aria-labelledby="problem-tittel">
+      <div class="container problem__grid">
+        <div class="problem__text reveal">
+          <span class="eyebrow">Problemet</span>
+          <h2 id="problem-tittel">Hvor legger du sekken til vanlig?</h2>
+          <p>For de fleste havner sekken eller vesken på gulvet. Der tar den plass, kommer i veien for føttene og gjør området rundt pulten rotete – enten det er i klasserommet, på lesesalen eller på kontoret.</p>
+          <p>Det er et lite problem, men det skjer hver eneste dag.</p>
+        </div>
+
+        <div class="problem__list">
+          <div class="problem__item reveal" data-delay="1">
+            <span class="icon-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            <div><h3>Tar plass på gulvet</h3><p>Sekken blir liggende der beina, stolen eller andre skal være.</p></div>
+          </div>
+          <div class="problem__item reveal" data-delay="2">
+            <span class="icon-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            <div><h3>Er i veien</h3><p>Lett å snuble i, og vanskelig å komme forbi når mange sitter tett.</p></div>
+          </div>
+          <div class="problem__item reveal" data-delay="3">
+            <span class="icon-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            <div><h3>Skaper rot</h3><p>Sekker og vesker på gulvet gjør hele rommet mindre ryddig.</p></div>
+          </div>
+          <div class="solution reveal" data-delay="3">
+            <span class="solution__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M12 3v7a5 5 0 1 1-5 5"/></svg></span>
+            <div><strong>Løsningen: Sekketøylen</strong><span>En enkel krok på siden av pulten – så sekken har en fast plass.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PRODUKTET / FORDELER
+         ========================================================= -->
+    <section class="section" id="produktet" aria-labelledby="produkt-tittel">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Produktet</span>
+          <h2 id="produkt-tittel">Liten krok. Stor forskjell rundt pulten.</h2>
+          <p>Sekketøylen festes på siden av pulten og gir sekken eller vesken et fast sted å henge. Designet er moderne og minimalistisk, og du velger selv om du vil ha den i plast eller metall.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature reveal">
+            <div class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/></svg></div>
+            <h3>Plassbesparende</h3>
+            <p>Tar minimalt med plass og frigjør gulvet rundt pulten.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <div class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <h3>Stabil</h3>
+            <p>Skrus fast på pulten, slik at den sitter godt på plass.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <div class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Beskytter pulten</h3>
+            <p>Gummibeskyttelse mellom krok og pult reduserer risikoen for riper og merker.</p>
+          </article>
+          <article class="feature reveal" data-delay="3">
+            <div class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Praktisk</h3>
+            <p>Gjør det enkelt å henge opp og ta med seg sekken eller vesken.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></div>
+            <h3>Moderne design</h3>
+            <p>Minimalistisk uttrykk som passer inn i moderne skole- og arbeidsmiljøer.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <div class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <h3>Slitesterk</h3>
+            <p>Utviklet med fokus på holdbarhet og daglig bruk.</p>
+          </article>
+          <article class="feature feature--wide reveal" data-delay="2">
+            <div class="feature__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div>
+            <div>
+              <h3>Bærekraftig fokus</h3>
+              <p>Utviklet med tanke på fornuftig materialbruk og lang levetid – et produkt som skal brukes lenge, ikke byttes ut.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SLIK FUNGERER DET
+         ========================================================= -->
+    <section class="section section--alt" id="slik-fungerer-det" aria-labelledby="slik-tittel">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Slik fungerer det</span>
+          <h2 id="slik-tittel">Klar til bruk i tre enkle steg</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step__top">
+              <span class="step__num" aria-hidden="true">01</span>
+              <span class="step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18M6 8v12M18 8v12"/><path d="M21 11v3"/></svg></span>
+            </div>
+            <h3>Plasser</h3>
+            <p>Kroken plasseres på siden av pulten, der den er lett å nå.</p>
+          </li>
+          <li class="step reveal" data-delay="1">
+            <div class="step__top">
+              <span class="step__num" aria-hidden="true">02</span>
+              <span class="step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+            </div>
+            <h3>Skru fast</h3>
+            <p>Sekketøylen skrus fast slik at den sitter stabilt. Gummibeskyttelsen bidrar til å beskytte pultens overflate.</p>
+          </li>
+          <li class="step reveal" data-delay="2">
+            <div class="step__top">
+              <span class="step__num" aria-hidden="true">03</span>
+              <span class="step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M12 3v7a5 5 0 1 1-5 5"/></svg></span>
+            </div>
+            <h3>Heng opp</h3>
+            <p>Heng sekken eller vesken på kroken – og få et ryddigere område rundt pulten.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BESTILL – velg plast eller metall, antall og send bestilling
+         Priser og mottaker-e-post fylles inn i INNSTILLINGER nederst i filen.
+         ========================================================= -->
+    <section class="section" id="bestill" aria-labelledby="bestill-tittel">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Bestill</span>
+          <h2 id="bestill-tittel">Velg din Sekketøylen</h2>
+          <p>Sekketøylen finnes i plast og metall. Velg variant og antall, fyll inn opplysningene dine og send bestillingen direkte til oss.</p>
+        </div>
+
+        <form class="order" id="bestillingsskjema" novalidate>
+          <!-- Venstre: produktvalg -->
+          <div class="order__panel reveal">
+            <fieldset>
+              <legend class="order__label">1. Velg materiale</legend>
+              <div class="variants__grid">
+
+                <label class="variant is-selected">
+                  <input type="radio" name="variant" value="plast" checked>
+                  <span class="variant__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="variant__media">
+                    <svg viewBox="0 0 120 100" aria-hidden="true">
+                      <rect x="16" y="16" width="4" height="36" rx="1.5" fill="#56625b"/>
+                      <rect x="20" y="12" width="12" height="44" rx="3" fill="#2b332f"/>
+                      <path d="M32 33 H62 Q86 33 86 57 V62 Q86 86 64 86 Q48 86 48 72" fill="none" stroke="#2b332f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <!-- Bilde: legg «sekketoylen-plast.jpg» i samme mappe -->
+                    <img class="photo-cover" src="sekketoylen-plast.jpg" alt="Sekketøylen i plast" onerror="this.remove()">
+                  </span>
+                  <span class="variant__body">
+                    <span class="variant__name">Sekketøylen Plast</span>
+                    <span class="variant__desc">Lett og enkel variant</span>
+                    <span class="variant__price" data-pris="plast"><span class="placeholder">[pris]</span></span>
+                  </span>
+                </label>
+
+                <label class="variant">
+                  <input type="radio" name="variant" value="metall">
+                  <span class="variant__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span class="variant__media">
+                    <svg viewBox="0 0 120 100" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="metall" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0" stop-color="#e6e9ec"/>
+                          <stop offset=".5" stop-color="#8d969d"/>
+                          <stop offset="1" stop-color="#c9ced3"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="16" y="16" width="4" height="36" rx="1.5" fill="#56625b"/>
+                      <rect x="20" y="12" width="12" height="44" rx="3" fill="url(#metall)"/>
+                      <path d="M32 33 H62 Q86 33 86 57 V62 Q86 86 64 86 Q48 86 48 72" fill="none" stroke="url(#metall)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <!-- Bilde: legg «sekketoylen-metall.jpg» i samme mappe -->
+                    <img class="photo-cover" src="sekketoylen-metall.jpg" alt="Sekketøylen i metall" onerror="this.remove()">
+                  </span>
+                  <span class="variant__body">
+                    <span class="variant__name">Sekketøylen Metall</span>
+                    <span class="variant__desc">Solid variant i metall</span>
+                    <span class="variant__price" data-pris="metall"><span class="placeholder">[pris]</span></span>
+                  </span>
+                </label>
+
+              </div>
+            </fieldset>
+
+            <div class="qty">
+              <span class="order__label" id="antall-label">2. Velg antall</span>
+              <div class="qty__control">
+                <button type="button" data-qty="-1" aria-label="Reduser antall">−</button>
+                <input id="antall" name="antall" type="number" min="1" max="99" value="1" inputmode="numeric" aria-labelledby="antall-label">
+                <button type="button" data-qty="1" aria-label="Øk antall">+</button>
+              </div>
+            </div>
+
+            <ul class="order__included" aria-label="Felles for begge variantene">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Skrus fast på siden av pulten</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gummibeskyttelse som skåner pultens overflate</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Moderne, minimalistisk design</li>
+            </ul>
+          </div>
+
+          <!-- Høyre: kundeopplysninger og oppsummering -->
+          <div class="order__panel order__details reveal" data-delay="1">
+            <span class="order__label">3. Dine opplysninger</span>
+            <div class="field">
+              <label for="b-navn">Navn <span class="req" aria-hidden="true">*</span></label>
+              <input id="b-navn" name="navn" type="text" autocomplete="name" required aria-describedby="b-navn-feil">
+              <span class="field__error" id="b-navn-feil" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="b-epost">E-post <span class="req" aria-hidden="true">*</span></label>
+              <input id="b-epost" name="epost" type="email" autocomplete="email" inputmode="email" required aria-describedby="b-epost-feil">
+              <span class="field__error" id="b-epost-feil" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="b-telefon">Telefon <span class="opt">(valgfritt)</span></label>
+              <input id="b-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel">
+            </div>
+            <div class="field">
+              <label for="b-kommentar">Kommentar <span class="opt">(valgfritt)</span></label>
+              <textarea id="b-kommentar" name="kommentar" class="short"></textarea>
+            </div>
+
+            <div class="summary" aria-live="polite">
+              <div class="summary__row"><span>Variant</span><span id="sum-variant">Sekketøylen Plast</span></div>
+              <div class="summary__row"><span>Antall</span><span id="sum-antall">1</span></div>
+              <div class="summary__row"><span>Pris per stk.</span><span id="sum-pris"><span class="placeholder">[pris]</span></span></div>
+              <div class="summary__row summary__row--total"><span>Totalt</span><span id="sum-total"><span class="placeholder">[pris]</span></span></div>
+            </div>
+
+            <div class="form__status" id="bestillingStatus" role="status" aria-live="polite"></div>
+            <button type="submit" class="btn btn--block">
+              Send bestilling
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form__note">Når vi har mottatt bestillingen, tar vi kontakt på e-post for å bekrefte den og avtale betaling og levering.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PRODUKSJON OG UTVIKLING
+         ========================================================= -->
+    <section class="section section--alt" id="utvikling" aria-labelledby="utvikling-tittel">
+      <div class="container dev__grid">
+        <div class="dev__intro reveal">
+          <span class="eyebrow">Fra idé til ferdig produkt</span>
+          <h2 id="utvikling-tittel">Utviklet steg for steg</h2>
+          <p>Sekketøylen ble ikke til over natten. Vi laget prototyper, testet dem i praksis og forbedret designet for hver runde – helt til vi hadde et ferdig produkt vi er fornøyde med.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <span class="tl-item__dot" aria-hidden="true">1</span>
+            <div class="tl-item__card">
+              <h3>Et hverdagsproblem</h3>
+              <p>Utgangspunktet var enkelt: sekker og vesker som tar plass på gulvet rundt pulten.</p>
+            </div>
+          </li>
+          <li class="tl-item reveal" data-delay="1">
+            <span class="tl-item__dot" aria-hidden="true">2</span>
+            <div class="tl-item__card">
+              <h3>Prototyper med 3D-printing</h3>
+              <p>Vi brukte 3D-printing til å lage prototyper raskt, slik at vi kunne prøve ut ulike former og løsninger.</p>
+            </div>
+          </li>
+          <li class="tl-item reveal" data-delay="2">
+            <span class="tl-item__dot" aria-hidden="true">3</span>
+            <div class="tl-item__card">
+              <h3>Testing og forbedring</h3>
+              <p>Hver prototype ble testet og vurdert. Det vi lærte, tok vi med oss inn i neste versjon av designet.</p>
+            </div>
+          </li>
+          <li class="tl-item tl-item--final reveal" data-delay="3">
+            <span class="tl-item__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div class="tl-item__card">
+              <h3>Ferdig produkt</h3>
+              <p>Resultatet er Sekketøylen: en ferdig utviklet krok for siden av pulten, tilgjengelig i plast og metall.</p>
+              <a href="#bestill" class="btn btn--sm">Bestill nå</a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BÆREKRAFT
+         ========================================================= -->
+    <section class="section section--dark" id="baerekraft" aria-labelledby="baerekraft-tittel">
+      <div class="container sustain">
+        <div class="sustain__intro reveal">
+          <span class="eyebrow">Bærekraft</span>
+          <h2 id="baerekraft-tittel">Laget for å vare</h2>
+          <p>For oss handler bærekraft om å lage et produkt som brukes lenge. Derfor har vi hatt disse prioriteringene med oss gjennom hele utviklingen.</p>
+        </div>
+        <ul class="sustain__list reveal" data-delay="1">
+          <li><span class="n">01</span>Lang levetid</li>
+          <li><span class="n">02</span>Holdbare materialer</li>
+          <li><span class="n">03</span>Fornuftig materialbruk</li>
+          <li><span class="n">04</span>Utvikling gjennom prototyping</li>
+          <li><span class="n">05</span>Et produkt som skal kunne brukes over lang tid</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         OM OSS – fem teammedlemmer
+         Bytt ut [Navn] og [Rolle]. Bilder: legg team-1.jpg … team-5.jpg i samme mappe.
+         ========================================================= -->
+    <section class="section" id="om-oss" aria-labelledby="om-tittel">
+      <div class="container">
+        <div class="about__head">
+          <div class="reveal">
+            <span class="eyebrow">Om oss</span>
+            <h2 id="om-tittel">Fem personer, ett hverdagsproblem</h2>
+          </div>
+          <div class="reveal" data-delay="1">
+            <p>Vi er fem i teamet bak Sekketøylen. Vi utviklet produktet fordi vi ønsket å løse et problem vi selv kjenner igjen: sekker og vesker som ligger i veien på gulvet.</p>
+            <p>Målet vårt har hele veien vært en løsning som er enkel, praktisk og som faktisk blir brukt.</p>
+          </div>
+        </div>
+
+        <ul class="team">
+          <li class="member reveal">
+            <div class="member__photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <img class="photo-cover" src="team-1.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3><span class="placeholder">[Navn]</span></h3>
+            <p><span class="placeholder">[Rolle]</span></p>
+          </li>
+          <li class="member reveal" data-delay="1">
+            <div class="member__photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <img class="photo-cover" src="team-2.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3><span class="placeholder">[Navn]</span></h3>
+            <p><span class="placeholder">[Rolle]</span></p>
+          </li>
+          <li class="member reveal" data-delay="2">
+            <div class="member__photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <img class="photo-cover" src="team-3.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3><span class="placeholder">[Navn]</span></h3>
+            <p><span class="placeholder">[Rolle]</span></p>
+          </li>
+          <li class="member reveal" data-delay="3">
+            <div class="member__photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <img class="photo-cover" src="team-4.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3><span class="placeholder">[Navn]</span></h3>
+            <p><span class="placeholder">[Rolle]</span></p>
+          </li>
+          <li class="member reveal" data-delay="4">
+            <div class="member__photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <img class="photo-cover" src="team-5.jpg" alt="" onerror="this.remove()">
+            </div>
+            <h3><span class="placeholder">[Navn]</span></h3>
+            <p><span class="placeholder">[Rolle]</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOR BEDRIFTER OG SKOLER
+         ========================================================= -->
+    <section class="section section--alt" id="bedrift" aria-labelledby="bedrift-tittel">
+      <div class="container">
+        <div class="b2b reveal">
+          <div>
+            <span class="eyebrow">For bedrifter og skoler</span>
+            <h2 id="bedrift-tittel">En smart løsning for skoler og arbeidsplasser</h2>
+            <p class="b2b__lead">Der mange mennesker bruker pulter hver dag, samler det seg fort sekker og vesker på gulvet. Sekketøylen kan være aktuell for skoler, kontorer og andre arbeids- og læringsmiljøer som ønsker bedre orden og plassutnyttelse.</p>
+            <div class="b2b__segments" aria-label="Aktuelle miljøer">
+              <span class="chip">Skoler</span>
+              <span class="chip">Kontorer</span>
+              <span class="chip">Bedrifter</span>
+              <span class="chip">Lesesaler og læringsmiljøer</span>
+            </div>
+            <a href="#kontakt" class="btn" data-topic="bedrift">
+              Ta kontakt for bedriftsløsninger
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <ul class="b2b__benefits">
+            <li class="b2b__benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Bedre orden</span></li>
+            <li class="b2b__benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Bedre utnyttelse av plass</span></li>
+            <li class="b2b__benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Mindre rot rundt pultene</span></li>
+            <li class="b2b__benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>En enkel og praktisk løsning</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         KONTAKT
+         ========================================================= -->
+    <section class="section" id="kontakt" aria-labelledby="kontakt-tittel">
+      <div class="container contact">
+        <div class="contact__info reveal">
+          <span class="eyebrow">Kontakt</span>
+          <h2 id="kontakt-tittel">Ta kontakt med oss</h2>
+          <p>Har du spørsmål om Sekketøylen, eller representerer du en skole eller bedrift? Send oss en melding.</p>
+
+          <!-- KONTAKTINFORMASJON – bytt ut plassholderne -->
+          <ul class="contact__list">
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></span>
+              <div><small>E-post</small><span class="placeholder">[e-postadresse]</span></div>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div><small>Telefon</small><span class="placeholder">[telefonnummer]</span></div>
+            </li>
+          </ul>
+
+          <!-- SOSIALE MEDIER – bytt href="#" med lenker til profilene, fjern de dere ikke bruker -->
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 5"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+          </div>
+        </div>
+
+        <form class="form reveal" id="kontaktskjema" data-delay="1" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="navn">Navn <span class="req" aria-hidden="true">*</span></label>
+              <input id="navn" name="navn" type="text" autocomplete="name" required aria-describedby="navn-feil">
+              <span class="field__error" id="navn-feil" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="epost">E-post <span class="req" aria-hidden="true">*</span></label>
+              <input id="epost" name="epost" type="email" autocomplete="email" inputmode="email" required aria-describedby="epost-feil">
+              <span class="field__error" id="epost-feil" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="henvendelse">Hva gjelder det?</label>
+            <select id="henvendelse" name="henvendelse">
+              <option value="sporsmal">Spørsmål om Sekketøylen</option>
+              <option value="bedrift">Bedrift, skole eller organisasjon</option>
+              <option value="annet">Annet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="melding">Melding <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="melding" name="melding" required aria-describedby="melding-feil"></textarea>
+            <span class="field__error" id="melding-feil" aria-live="polite"></span>
+          </div>
+          <div class="form__status" id="kontaktStatus" role="status" aria-live="polite"></div>
+          <button type="submit" class="btn btn--block">
+            Send melding
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form__note">Felt merket med * må fylles ut. Vi bruker opplysningene kun til å svare på henvendelsen din.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#hjem" class="logo logo--light" aria-label="Sekketøylen – til toppen">
+            <svg class="logo__mark" viewBox="0 0 36 36" aria-hidden="true">
+              <rect class="logo__bg" width="36" height="36" rx="10"/>
+              <path class="logo__hook" d="M14 8v9a5.5 5.5 0 0 0 5.5 5.5h0a4 4 0 0 1 0 8" fill="none" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+            <span>Sekketøylen</span>
+          </a>
+          <p class="footer__about">Den smarte kroken som holder sekken eller vesken unna gulvet og gir bedre plass rundt pulten. I plast eller metall.</p>
+          <p class="footer__alt">Også skrevet Sekketoylen.</p>
+        </div>
+
+        <div>
+          <h4>Navigasjon</h4>
+          <ul class="footer__links">
+            <li><a href="#hjem">Hjem</a></li>
+            <li><a href="#produktet">Produktet</a></li>
+            <li><a href="#slik-fungerer-det">Slik fungerer det</a></li>
+            <li><a href="#bestill">Bestill</a></li>
+            <li><a href="#om-oss">Om oss</a></li>
+            <li><a href="#bedrift">Bedrift</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer__links">
+            <li><span class="placeholder">[e-postadresse]</span></li>
+            <li><span class="placeholder">[telefonnummer]</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Følg oss</h4>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 5"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="aar">2026</span> Sekketøylen. Alle rettigheter reservert.</span>
+        <a href="#hjem">Til toppen ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+  <script>
+    /* =========================================================
+       INNSTILLINGER – FYLL INN HER
+       ---------------------------------------------------------
+       priser:    pris i hele kroner per stk., f.eks. 149
+       epost:     adressen bestillinger og meldinger skal sendes til
+       skjemaUrl: (valgfritt) adresse til en skjematjeneste, f.eks.
+                  'https://formspree.io/f/xxxxxx'. Er den fylt inn,
+                  sendes bestillingen direkte fra nettsiden. Er den tom,
+                  åpnes kundens e-postprogram med bestillingen ferdig utfylt.
+       ========================================================= */
+    const INNSTILLINGER = {
+      priser: {
+        plast: null,   // f.eks. 149
+        metall: null   // f.eks. 249
+      },
+      epost: '',       // f.eks. 'post@sekketoylen.no'
+      skjemaUrl: ''
+    };
+
+    (function () {
+      'use strict';
+
+      const VARIANTNAVN = { plast: 'Sekketøylen Plast', metall: 'Sekketøylen Metall' };
+      const header = document.getElementById('header');
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      const mobileQuery = window.matchMedia('(max-width: 960px)');
+
+      /* ---------- 1. Mobilmeny ---------- */
+      function setMenu(open) {
+        menu.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Lukk meny' : 'Åpne meny');
+        document.body.classList.toggle('nav-open', open);
+      }
+      toggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { if (mobileQuery.matches) setMenu(false); }));
+      document.querySelector('.nav__cart').addEventListener('click', () => setMenu(false));
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
+      });
+      mobileQuery.addEventListener('change', e => { if (!e.matches) setMenu(false); });
+
+      /* ---------- 2. Header-skygge ved scroll ---------- */
+      const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      /* ---------- 3. Animasjoner når elementer kommer til syne ---------- */
+      const revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => revealObserver.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+      }
+
+      /* ---------- 4. Marker aktiv seksjon i menyen ---------- */
+      const navLinks = document.querySelectorAll('[data-nav]');
+      if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const id = '#' + entry.target.id;
+            navLinks.forEach(link => {
+              const active = link.getAttribute('href') === id;
+              link.classList.toggle('is-active', active);
+              if (active) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        navLinks.forEach(link => {
+          const section = document.querySelector(link.getAttribute('href'));
+          if (section) sectionObserver.observe(section);
+        });
+      }
+
+      /* ---------- 5. «Ta kontakt»-knapper forhåndsvelger type henvendelse ---------- */
+      const topicSelect = document.getElementById('henvendelse');
+      document.querySelectorAll('[data-topic]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          topicSelect.value = btn.dataset.topic;
+          setTimeout(() => document.getElementById('navn').focus({ preventScroll: true }), 600);
+        });
+      });
+
+      /* ---------- 6. Bestilling: variant, antall og oppsummering ---------- */
+      const orderForm = document.getElementById('bestillingsskjema');
+      const qtyInput = document.getElementById('antall');
+      const variantLabels = orderForm.querySelectorAll('.variant');
+
+      const formatKr = n => n.toLocaleString('nb-NO') + ' kr';
+      const prisHTML = n => (typeof n === 'number' ? formatKr(n) : '<span class="placeholder">[pris]</span>');
+      const valgtVariant = () => orderForm.querySelector('input[name="variant"]:checked').value;
+      const antall = () => {
+        const n = Math.round(Number(qtyInput.value));
+        return Math.min(99, Math.max(1, Number.isFinite(n) ? n : 1));
+      };
+
+      // Vis prisene på variantkortene
+      document.querySelectorAll('[data-pris]').forEach(el => { el.innerHTML = prisHTML(INNSTILLINGER.priser[el.dataset.pris]); });
+
+      function oppdaterOppsummering() {
+        const v = valgtVariant();
+        const pris = INNSTILLINGER.priser[v];
+        const n = antall();
+        variantLabels.forEach(l => l.classList.toggle('is-selected', l.querySelector('input').checked));
+        document.getElementById('sum-variant').textContent = VARIANTNAVN[v];
+        document.getElementById('sum-antall').textContent = n;
+        document.getElementById('sum-pris').innerHTML = prisHTML(pris);
+        document.getElementById('sum-total').innerHTML = prisHTML(typeof pris === 'number' ? pris * n : null);
+      }
+
+      orderForm.querySelectorAll('input[name="variant"]').forEach(r => r.addEventListener('change', oppdaterOppsummering));
+      orderForm.querySelectorAll('[data-qty]').forEach(btn => {
+        btn.addEventListener('click', () => { qtyInput.value = Math.min(99, Math.max(1, antall() + Number(btn.dataset.qty))); oppdaterOppsummering(); });
+      });
+      qtyInput.addEventListener('input', oppdaterOppsummering);
+      qtyInput.addEventListener('blur', () => { qtyInput.value = antall(); oppdaterOppsummering(); });
+      oppdaterOppsummering();
+
+      /* ---------- 7. Validering (felles for begge skjemaene) ---------- */
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+      function setError(input, message) {
+        const field = input.closest('.field');
+        const errorEl = document.getElementById(input.id + '-feil');
+        field.classList.toggle('has-error', Boolean(message));
+        input.setAttribute('aria-invalid', message ? 'true' : 'false');
+        if (errorEl) errorEl.textContent = message;
+      }
+
+      function validate(form) {
+        let firstInvalid = null;
+        form.querySelectorAll('[required]').forEach(input => {
+          const value = input.value.trim();
+          let msg = '';
+          if (!value) msg = input.type === 'email' ? 'Skriv inn e-postadressen din.' : 'Dette feltet må fylles ut.';
+          else if (input.type === 'email' && !emailPattern.test(value)) msg = 'Sjekk at e-postadressen er riktig.';
+          setError(input, msg);
+          if (msg && !firstInvalid) firstInvalid = input;
+        });
+        return firstInvalid;
+      }
+
+      document.querySelectorAll('form [required]').forEach(input => {
+        input.addEventListener('input', () => { if (input.getAttribute('aria-invalid') === 'true') validate(input.form); });
+      });
+
+      /* ---------- 8. Sending: skjematjeneste hvis satt opp, ellers e-post ---------- */
+      async function send(subject, data) {
+        if (INNSTILLINGER.skjemaUrl) {
+          const res = await fetch(INNSTILLINGER.skjemaUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ _subject: subject, ...data })
+          });
+          if (!res.ok) throw new Error('Sending feilet');
+          return 'sendt';
+        }
+        if (INNSTILLINGER.epost) {
+          const body = Object.entries(data).map(([k, v]) => k + ': ' + v).join('\n');
+          window.location.href = 'mailto:' + INNSTILLINGER.epost +
+            '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          return 'epost';
+        }
+        return 'mangler';
+      }
+
+      function visStatus(box, type, text) {
+        box.className = 'form__status' + (type ? ' is-' + type : '');
+        box.textContent = text || '';
+      }
+
+      async function handleSubmit(form, statusBox, buildMessage, texts) {
+        visStatus(statusBox);
+        const firstInvalid = validate(form);
+        if (firstInvalid) {
+          visStatus(statusBox, 'error', 'Noen felt mangler eller er feil utfylt.');
+          firstInvalid.focus();
+          return;
+        }
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        try {
+          const { subject, data } = buildMessage();
+          const result = await send(subject, data);
+          if (result === 'sendt') { visStatus(statusBox, 'success', texts.sendt); form.reset(); }
+          else if (result === 'epost') { visStatus(statusBox, 'success', texts.epost); }
+          else { visStatus(statusBox, 'error', 'Beklager, dette kan ikke sendes akkurat nå. Prøv igjen senere.'); }
+        } catch (err) {
+          visStatus(statusBox, 'error', 'Noe gikk galt under sendingen. Prøv igjen om litt.');
+        } finally {
+          button.disabled = false;
+          if (form === orderForm) oppdaterOppsummering();
+        }
+      }
+
+      /* ---------- 9. Bestillingsskjema ---------- */
+      orderForm.addEventListener('submit', e => {
+        e.preventDefault();
+        handleSubmit(orderForm, document.getElementById('bestillingStatus'), () => {
+          const v = valgtVariant(), n = antall(), pris = INNSTILLINGER.priser[v];
+          const data = {
+            Variant: VARIANTNAVN[v],
+            Antall: n,
+            'Pris per stk.': typeof pris === 'number' ? formatKr(pris) : '-',
+            Totalt: typeof pris === 'number' ? formatKr(pris * n) : '-',
+            Navn: orderForm.navn.value.trim(),
+            'E-post': orderForm.epost.value.trim(),
+            Telefon: orderForm.telefon.value.trim() || '-',
+            Kommentar: orderForm.kommentar.value.trim() || '-'
+          };
+          return { subject: 'Bestilling: ' + n + ' × ' + VARIANTNAVN[v], data };
+        }, {
+          sendt: 'Takk for bestillingen! Vi tar kontakt på e-post for å bekrefte den og avtale betaling og levering.',
+          epost: 'E-postprogrammet ditt åpnes nå med bestillingen ferdig utfylt. Trykk «Send» der for å fullføre.'
+        });
+      });
+
+      /* ---------- 10. Kontaktskjema ---------- */
+      const contactForm = document.getElementById('kontaktskjema');
+      contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+        handleSubmit(contactForm, document.getElementById('kontaktStatus'), () => {
+          const type = topicSelect.options[topicSelect.selectedIndex].text;
+          return {
+            subject: 'Henvendelse fra nettsiden: ' + type,
+            data: {
+              Navn: contactForm.navn.value.trim(),
+              'E-post': contactForm.epost.value.trim(),
+              Gjelder: type,
+              Melding: contactForm.melding.value.trim()
+            }
+          };
+        }, {
+          sendt: 'Takk for meldingen! Vi tar kontakt så snart vi kan.',
+          epost: 'E-postprogrammet ditt åpnes nå med meldingen ferdig utfylt. Trykk «Send» der for å fullføre.'
+        });
+      });
+
+      /* ---------- 11. Årstall i footer ---------- */
+      document.getElementById('aar').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
