@@ -4,65 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sekketøylen – En krok. Mindre kaos.</title>
-  <meta name="description" content="Sekketøylen (Sekketoylen) er en smart krok som festes på siden av pulten, slik at sekken eller vesken holdes unna gulvet. Bestill i plast eller metall.">
-  <meta name="theme-color" content="#121a16">
+  <meta name="description" content="Sekketøylen (Sekketoylen) er en smart krok som festes på siden av pulten, slik at sekken eller vesken holdes unna gulvet. Bestill i plast og betal med Vipps – metallvariant kommer snart.">
+  <meta name="theme-color" content="#2c3826">
 
-  <!-- Open Graph – legg inn bilde-URL når nettsiden er publisert -->
   <meta property="og:title" content="Sekketøylen – En krok. Mindre kaos.">
-  <meta property="og:description" content="Den smarte kroken som holder sekken eller vesken unna gulvet og gir bedre plass rundt pulten. Finnes i plast og metall.">
+  <meta property="og:description" content="Den smarte kroken som holder sekken eller vesken unna gulvet og gir bedre plass rundt pulten.">
   <meta property="og:type" content="website">
-  <!-- <meta property="og:image" content="sekketoylen.jpg"> -->
 
-  <!-- Favicon som inline SVG (bytt gjerne ut med egen logo-fil) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23121a16'/%3E%3Cpath d='M12 7v8a5 5 0 0 0 5 5h0a3.5 3.5 0 0 1 0 7' fill='none' stroke='%234fbf7f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <!-- Favicon: Sekketøylen-logoen (innebygd) -->
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+  <!-- Overskriftsfont som matcher logoen. Uten internett brukes Georgia automatisk. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&display=swap" rel="stylesheet">
 
   <!-- Markerer at JavaScript kjører, slik at animasjoner kun skjuler innhold når JS er tilgjengelig -->
   <script>document.documentElement.classList.add('js');</script>
 
   <!--
     ============================================================
-    BILDER – SLIK LEGGER DERE INN EKTE PRODUKTBILDER
-    Legg bildefilene i SAMME MAPPE som denne HTML-filen, med disse navnene:
-      sekketoylen.jpg          → stort bilde øverst på forsiden
-      sekketoylen-plast.jpg    → bilde av plastvarianten (bestilling)
-      sekketoylen-metall.jpg   → bilde av metallvarianten (bestilling)
-      team-1.jpg … team-5.jpg  → bilder av teammedlemmene (Om oss)
-    Finnes bildet, vises det automatisk. Finnes det ikke, vises illustrasjonen i stedet.
+    BILDER – SLIK LEGGER DERE INN EKTE BILDER
+    Logoen er bygget inn i filen. Andre bilder legges i SAMME MAPPE
+    som denne HTML-filen, med disse navnene:
+      sekketoylen.jpg        → produktbilde øverst på forsiden
+      sekketoylen-plast.jpg  → bilde av plastvarianten (bestilling)
+      sekketoylen-metall.jpg → bilde av metallvarianten (bestilling)
+      jon-leon.jpg, sandra.jpg, leah.jpg, hedda.jpg, julie.jpg → teamet
+    Finnes bildet, vises det automatisk. Finnes det ikke, vises
+    illustrasjonen eller initialene i stedet.
     ============================================================
   -->
 
   <style>
     /* =========================================================
-       1. DESIGNSYSTEM – endre farger, avstander og former her
+       1. DESIGNSYSTEM – farger hentet fra Sekketøylen-logoen
        ========================================================= */
     :root {
-      /* Farger – grønn profil */
-      --c-ink: #121a16;          /* Primær mørk (tekst, mørke seksjoner) */
-      --c-ink-2: #26332c;        /* Sekundær mørk */
-      --c-muted: #56625b;        /* Dempet brødtekst */
-      --c-line: #e1e4dc;         /* Linjer og rammer */
-      --c-paper: #f6f6f1;        /* Lys bakgrunn */
-      --c-paper-2: #eceee6;      /* Alternativ seksjonsbakgrunn */
-      --c-surface: #ffffff;      /* Kort og flater */
-      --c-accent: #1f6b45;       /* Merkefarge – knapper (god kontrast med hvit tekst) */
-      --c-accent-hover: #17543a; /* Merkefarge hover */
-      --c-accent-bright: #4fbf7f;/* Lys grønn – detaljer og tekst på mørk bakgrunn */
-      --c-accent-soft: #e2f1e7;  /* Lys grønn bakgrunn */
-      --c-accent-rgb: 31, 107, 69; /* Samme som --c-accent, brukt i skygger */
-      --c-on-dark: #f1f3ee;      /* Tekst på mørk bakgrunn */
-      --c-on-dark-muted: #a6b0aa;
-      --c-success: #15803d;
-      --c-error: #b91c1c;
+      /* Merkefarger fra logoen */
+      --c-brand: #768a65;        /* Logoens grønne bakgrunn */
+      --c-brand-rgb: 118, 138, 101;
+      --c-brand-pale: #bece9f;   /* Kroken i logoen */
+      --c-brand-mist: #dae2b9;   /* Ringen rundt logoen */
+      --c-cream: #f7f3e8;        /* Skriften i logoen */
 
-      /* Typografi (systemfonter = rask lasting, ingen eksterne kall) */
+      /* Bruksfarger */
+      --c-ink: #24301f;          /* Tekst */
+      --c-ink-2: #3a4733;        /* Sekundær tekst / detaljer */
+      --c-muted: #5b6656;        /* Dempet brødtekst */
+      --c-line: #e2dfd0;         /* Linjer og rammer */
+      --c-paper: var(--c-cream); /* Sidebakgrunn */
+      --c-paper-2: #edecdc;      /* Alternativ seksjonsbakgrunn */
+      --c-surface: #fffdf8;      /* Kort og flater */
+      --c-accent: #4d6340;       /* Knapper – mørkere logogrønn for god kontrast */
+      --c-accent-hover: #3d4f33;
+      --c-accent-rgb: 77, 99, 64;
+      --c-accent-soft: #e6ecd6;  /* Lys grønn bakgrunn */
+      --c-dark: #2c3826;         /* Mørke seksjoner */
+      --c-dark-2: #222c1d;       /* Footer */
+      --c-on-dark: var(--c-cream);
+      --c-on-dark-muted: #b0b9a8;
+      --c-success: #3f6b2f;
+      --c-error: #a8321e;
+
+      /* Typografi */
+      --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
       --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       --fs-xs: 0.8125rem;
       --fs-sm: 0.9375rem;
       --fs-base: 1.0625rem;
       --fs-lg: 1.25rem;
       --fs-xl: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
-      --fs-2xl: clamp(2rem, 1.4rem + 2.4vw, 3rem);
-      --fs-hero: clamp(2.75rem, 1.6rem + 5vw, 5.25rem);
+      --fs-2xl: clamp(2.1rem, 1.5rem + 2.4vw, 3.25rem);
+      --fs-hero: clamp(3rem, 1.8rem + 5vw, 5.5rem);
 
       /* Avstander */
       --space-1: 0.25rem;
@@ -82,17 +96,18 @@
       --radius-pill: 999px;
 
       /* Skygger */
-      --shadow-sm: 0 1px 2px rgba(18, 26, 22, .06), 0 1px 1px rgba(18, 26, 22, .04);
-      --shadow: 0 10px 30px -12px rgba(18, 26, 22, .18), 0 2px 6px rgba(18, 26, 22, .05);
-      --shadow-lg: 0 30px 60px -24px rgba(18, 26, 22, .30);
+      --shadow-sm: 0 1px 2px rgba(36, 48, 31, .06), 0 1px 1px rgba(36, 48, 31, .04);
+      --shadow: 0 10px 30px -12px rgba(36, 48, 31, .2), 0 2px 6px rgba(36, 48, 31, .05);
+      --shadow-lg: 0 30px 60px -24px rgba(36, 48, 31, .32);
 
       /* Layout */
       --container: 1180px;
       --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
-      --header-h: 72px;
+      --header-h: 76px;
 
       /* Bevegelse */
       --ease: cubic-bezier(.2, .7, .2, 1);
+      --ease-spring: cubic-bezier(.34, 1.3, .64, 1);
       --dur: 220ms;
     }
 
@@ -118,13 +133,14 @@
     body.nav-open { overflow: hidden; }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; }
-    h1, h2, h3, h4 { margin: 0; line-height: 1.12; letter-spacing: -0.025em; font-weight: 700; }
+    h1, h2, h3, h4 { margin: 0; line-height: 1.12; letter-spacing: -0.02em; font-weight: 700; }
+    h1, h2 { font-family: var(--font-serif); font-weight: 600; letter-spacing: -0.025em; }
     p { margin: 0; }
     ul, ol { margin: 0; padding: 0; list-style: none; }
     fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 
     :focus-visible {
-      outline: 3px solid var(--c-accent-bright);
+      outline: 3px solid var(--c-brand);
       outline-offset: 3px;
       border-radius: 6px;
     }
@@ -138,12 +154,11 @@
 
     .section { padding-block: var(--section-y); }
     .section--alt { background: var(--c-paper-2); }
-    .section--dark { background: var(--c-ink); color: var(--c-on-dark); }
+    .section--dark { background: var(--c-dark); color: var(--c-on-dark); }
 
-    /* Hopp til innhold (tilgjengelighet) */
     .skip-link {
       position: absolute; left: var(--space-4); top: -100px; z-index: 200;
-      background: var(--c-ink); color: #fff; padding: var(--space-3) var(--space-4);
+      background: var(--c-dark); color: #fff; padding: var(--space-3) var(--space-4);
       border-radius: var(--radius-sm); text-decoration: none; font-weight: 600;
     }
     .skip-link:focus { top: var(--space-4); }
@@ -155,29 +170,22 @@
       color: var(--c-accent);
     }
     .eyebrow::before { content: ""; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
-    .section--dark .eyebrow { color: var(--c-accent-bright); }
+    .section--dark .eyebrow { color: var(--c-brand-pale); }
 
     .section-head { max-width: 720px; margin-bottom: var(--space-7); }
     .section-head--center { margin-inline: auto; text-align: center; }
     .section-head h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
     .section-head p { margin-top: var(--space-4); color: var(--c-muted); font-size: var(--fs-lg); }
-    .section--dark .section-head p { color: var(--c-on-dark-muted); }
 
-    /* Felt som skal fylles inn (navn, priser, kontaktinfo) – lett å se og lett å finne i koden */
+    /* Felt som fortsatt skal fylles inn (kun pris) – lett å se og finne i koden */
     .placeholder {
       color: var(--c-muted);
-      background: repeating-linear-gradient(-45deg, transparent 0 6px, rgba(var(--c-accent-rgb), .07) 6px 12px);
+      background: repeating-linear-gradient(-45deg, transparent 0 6px, rgba(var(--c-accent-rgb), .08) 6px 12px);
       border-bottom: 1px dashed var(--c-accent);
       padding-inline: 2px;
     }
-    .section--dark .placeholder, .site-footer .placeholder { color: var(--c-on-dark-muted); border-color: var(--c-accent-bright); }
 
-    /* Illustrasjonsfarger følger designsystemet */
-    .ill-accent { fill: var(--c-accent); }
-    .ill-accent-stroke { stroke: var(--c-accent); }
-    .ill-soft { fill: var(--c-accent-bright); }
-
-    /* Ekte bilder legges oppå illustrasjonen når bildefilen finnes */
+    /* Ekte bilder legges oppå illustrasjoner/initialer når bildefilen finnes */
     .photo-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
     /* =========================================================
@@ -194,16 +202,16 @@
       text-decoration: none; cursor: pointer; white-space: nowrap;
       transition: transform var(--dur) var(--ease), background-color var(--dur) var(--ease),
                   box-shadow var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
-      box-shadow: 0 8px 20px -10px rgba(var(--c-accent-rgb), .7);
+      box-shadow: 0 8px 20px -10px rgba(var(--c-accent-rgb), .75);
     }
-    .btn:hover { background: var(--c-accent-hover); transform: translateY(-2px); box-shadow: 0 14px 26px -12px rgba(var(--c-accent-rgb), .8); }
+    .btn:hover { background: var(--c-accent-hover); transform: translateY(-2px); box-shadow: 0 14px 26px -12px rgba(var(--c-accent-rgb), .85); }
     .btn:active { transform: translateY(0); }
     .btn:disabled { opacity: .6; cursor: progress; transform: none; }
     .btn svg { width: 18px; height: 18px; transition: transform var(--dur) var(--ease); }
     .btn:hover svg { transform: translateX(3px); }
 
-    .btn--ghost { --btn-bg: transparent; --btn-fg: var(--c-ink); border-color: rgba(18, 26, 22, .2); box-shadow: none; }
-    .btn--ghost:hover { background: var(--c-ink); color: #fff; border-color: var(--c-ink); box-shadow: var(--shadow); }
+    .btn--ghost { --btn-bg: transparent; --btn-fg: var(--c-ink); border-color: rgba(36, 48, 31, .22); box-shadow: none; }
+    .btn--ghost:hover { background: var(--c-dark); color: #fff; border-color: var(--c-dark); box-shadow: var(--shadow); }
 
     .btn--sm { min-height: 42px; padding: 0 var(--space-4); }
     .btn--block { width: 100%; }
@@ -217,50 +225,59 @@
       border-bottom: 1px solid transparent;
       transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
     }
-    /* Uskarp bakgrunn ligger på et eget lag, slik at mobilmenyen kan dekke hele skjermen */
+    /* Uskarp bakgrunn på eget lag, slik at mobilmenyen kan dekke hele skjermen */
     .site-header::before {
       content: ""; position: absolute; inset: 0; z-index: -1;
-      background: rgba(246, 246, 241, .78);
-      backdrop-filter: saturate(160%) blur(14px);
-      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      background: rgba(247, 243, 232, .8);
+      backdrop-filter: saturate(150%) blur(14px);
+      -webkit-backdrop-filter: saturate(150%) blur(14px);
       transition: background-color var(--dur) var(--ease);
     }
-    .site-header.is-scrolled {
-      border-bottom-color: var(--c-line);
-      box-shadow: 0 6px 24px -18px rgba(18, 26, 22, .35);
-    }
-    .site-header.is-scrolled::before { background: rgba(246, 246, 241, .92); }
+    .site-header.is-scrolled { border-bottom-color: var(--c-line); box-shadow: 0 6px 24px -18px rgba(36, 48, 31, .4); }
+    .site-header.is-scrolled::before { background: rgba(247, 243, 232, .94); }
     .nav { height: 100%; display: flex; align-items: center; gap: var(--space-5); }
 
-    .logo { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; font-weight: 750; font-size: 1.125rem; letter-spacing: -0.02em; }
-    .logo__mark { width: 36px; height: 36px; flex-shrink: 0; }
-    .logo__bg { fill: var(--c-ink); }
-    .logo__hook { stroke: var(--c-accent-bright); }
-    .logo--light .logo__bg { fill: #fff; }
-    .logo--light .logo__hook { stroke: var(--c-accent); }
+    /* Logo: runde Sekketøylen-logo + navnet i samme skrifttype som logoen */
+    .logo { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; position: relative; z-index: 120; }
+    .logo__img { width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 6px 14px -6px rgba(36, 48, 31, .45); transition: transform .5s var(--ease-spring); }
+    .logo:hover .logo__img { transform: rotate(-10deg) scale(1.04); }
+    .logo__word { font-family: var(--font-serif); font-weight: 650; font-size: 1.4rem; letter-spacing: -0.02em; line-height: 1; color: var(--c-ink); }
 
-    .nav__menu { margin-left: auto; }
-    .nav__links { display: flex; align-items: center; gap: var(--space-1); }
+    .nav__menu { position: relative; margin-left: auto; }
+    .nav__links { position: relative; z-index: 1; display: flex; align-items: center; gap: var(--space-1); }
     .nav__links a {
       position: relative; display: inline-block;
-      padding: var(--space-2) var(--space-3);
+      padding: 9px 16px;
       font-size: var(--fs-sm); font-weight: 550; color: var(--c-ink-2); text-decoration: none;
       border-radius: var(--radius-pill);
-      transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+      transition: color var(--dur) var(--ease);
     }
-    .nav__links a:hover { background: rgba(18, 26, 22, .06); color: var(--c-ink); }
-    .nav__links a.is-active { color: var(--c-ink); }
-    .nav__links a.is-active::after {
-      content: ""; position: absolute; left: 50%; bottom: 2px; width: 5px; height: 5px;
-      border-radius: 50%; background: var(--c-accent); transform: translateX(-50%);
-    }
+    .nav__links a:hover { color: var(--c-accent); }
+    .nav__links a.is-active { color: var(--c-accent); }
 
-    /* Kjøp-knapp + hamburger: alltid synlig til høyre i headeren */
+    /* Aktiv-markør: en grønn ring som glir mellom menypunktene */
+    .nav__indicator {
+      position: absolute; left: 0; top: 50%;
+      width: 0; height: 42px;
+      border-radius: var(--radius-pill);
+      background: var(--c-accent-soft);
+      box-shadow:
+        inset 0 0 0 1.5px rgba(var(--c-brand-rgb), .7),
+        0 0 0 4px rgba(var(--c-brand-rgb), .12),
+        0 8px 18px -10px rgba(var(--c-accent-rgb), .7);
+      transform: translate(var(--ind-x, 0px), -50%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .55s var(--ease-spring), width .55s var(--ease-spring), opacity .3s var(--ease);
+    }
+    .nav__indicator.is-visible { opacity: 1; }
+    .nav__indicator.no-anim { transition: none; }
+
+    /* Kjøp-knapp + hamburger: alltid synlig til høyre */
     .nav__actions { display: flex; align-items: center; gap: var(--space-3); position: relative; z-index: 120; }
     .nav__cart svg { width: 18px; height: 18px; }
     .nav__cart:hover svg { transform: none; }
 
-    /* Hamburger */
     .nav__toggle {
       display: none; width: 44px; height: 44px; padding: 0;
       border: 1px solid var(--c-line); border-radius: 50%; background: var(--c-surface);
@@ -278,9 +295,11 @@
     .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .nav__toggle[aria-expanded="true"] span:nth-child(3) { top: 21px; transform: translateX(-50%) rotate(-45deg); }
 
+    @media (max-width: 1040px) { .nav__links a { padding-inline: 12px; } }
     @media (max-width: 960px) {
       .nav__toggle { display: block; }
       .nav__actions { margin-left: auto; }
+      .nav__indicator { display: none; }
       .nav__menu {
         position: fixed; inset: 0; z-index: 110; margin: 0;
         display: flex; flex-direction: column; justify-content: center;
@@ -289,24 +308,26 @@
         opacity: 0; visibility: hidden; transform: translateY(-8px);
         transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility 0s linear var(--dur);
       }
-      .nav__menu.is-open {
-        opacity: 1; visibility: visible; transform: none;
-        transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
-      }
+      .nav__menu.is-open { opacity: 1; visibility: visible; transform: none; transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); }
       .nav__links { flex-direction: column; align-items: stretch; gap: 0; }
       .nav__links a {
         display: block;
-        font-size: 1.75rem; font-weight: 650; letter-spacing: -0.02em;
+        font-family: var(--font-serif); font-size: 1.9rem; font-weight: 600; letter-spacing: -0.02em; color: var(--c-ink);
         padding: var(--space-3) 0; border-radius: 0; border-bottom: 1px solid var(--c-line);
       }
-      .nav__links a:hover { background: none; color: var(--c-accent); }
-      .nav__links a.is-active::after { display: none; }
+      /* På mobil markeres aktivt punkt med en liten ring */
+      .nav__links a.is-active::after {
+        content: ""; position: absolute; right: 4px; top: 50%;
+        width: 14px; height: 14px; border-radius: 50%; transform: translateY(-50%);
+        border: 2px solid var(--c-brand); box-shadow: 0 0 0 4px rgba(var(--c-brand-rgb), .18);
+      }
     }
-    @media (max-width: 380px) {
-      .logo span { font-size: 1rem; }
+    @media (max-width: 400px) {
+      .logo__img { width: 40px; height: 40px; }
+      .logo__word { font-size: 1.2rem; }
       .nav__cart .label-long { display: none; }
     }
-    @media (min-width: 381px) { .nav__cart .label-short { display: none; } }
+    @media (min-width: 401px) { .nav__cart .label-short { display: none; } }
 
     /* =========================================================
        5. HERO
@@ -319,10 +340,10 @@
     .hero::before {
       content: ""; position: absolute; z-index: -1;
       width: 900px; height: 900px; right: -320px; top: -300px;
-      background: radial-gradient(circle, rgba(79, 191, 127, .16), transparent 62%);
+      background: radial-gradient(circle, rgba(var(--c-brand-rgb), .2), transparent 62%);
       pointer-events: none;
     }
-    .hero__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: center; }
+    .hero__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2.5rem, 1rem + 4vw, 5rem); align-items: center; }
     .hero__badge {
       display: inline-flex; align-items: center; gap: var(--space-2);
       padding: 6px 14px 6px 8px; border-radius: var(--radius-pill);
@@ -330,22 +351,23 @@
       font-size: var(--fs-xs); font-weight: 600; color: var(--c-ink-2);
     }
     .hero__badge-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--c-accent-soft); display: grid; place-items: center; }
-    .hero__badge-dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); }
-    .hero h1 { font-size: var(--fs-hero); letter-spacing: -0.045em; line-height: .98; margin-top: var(--space-5); }
-    .hero h1 .accent { color: var(--c-accent); }
+    .hero__badge-dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c-brand); }
+    .hero h1 { font-size: var(--fs-hero); letter-spacing: -0.035em; line-height: .98; margin-top: var(--space-5); }
+    .hero h1 .accent { color: var(--c-brand); font-style: italic; }
     .hero__lead { margin-top: var(--space-5); max-width: 34rem; font-size: var(--fs-lg); color: var(--c-muted); }
     .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
     .hero__points { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); margin-top: var(--space-6); font-size: var(--fs-sm); color: var(--c-ink-2); font-weight: 550; }
     .hero__points li { display: inline-flex; align-items: center; gap: var(--space-2); }
-    .hero__points svg { width: 18px; height: 18px; color: var(--c-accent); }
+    .hero__points svg { width: 18px; height: 18px; color: var(--c-brand); }
 
+    .hero__visual { position: relative; }
     .product-visual {
       position: relative; margin: 0;
       aspect-ratio: 1 / 0.92;
       border-radius: var(--radius-lg);
       background:
         radial-gradient(circle at 70% 30%, rgba(255, 255, 255, .9), transparent 55%),
-        linear-gradient(160deg, #ffffff 0%, #e9ede4 100%);
+        linear-gradient(160deg, #fffdf8 0%, #e9e9d6 100%);
       border: 1px solid var(--c-line);
       box-shadow: var(--shadow-lg);
       overflow: hidden;
@@ -354,9 +376,21 @@
     .float { animation: float 6s ease-in-out infinite; transform-origin: 445px 135px; }
     @keyframes float { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-1.4deg); } }
 
+    /* Logoen som «segl» på produktbildet */
+    .hero__seal {
+      position: absolute; left: -26px; bottom: -30px; z-index: 2;
+      width: clamp(112px, 26%, 156px); height: auto; aspect-ratio: 1;
+      border-radius: 50%;
+      transform: rotate(-9deg);
+      filter: drop-shadow(0 16px 22px rgba(36, 48, 31, .3));
+      transition: transform .6s var(--ease-spring);
+    }
+    .hero__visual:hover .hero__seal { transform: rotate(-2deg) scale(1.03); }
+
     @media (max-width: 900px) {
       .hero__grid { grid-template-columns: 1fr; }
       .hero__visual { max-width: 560px; }
+      .hero__seal { left: -6px; bottom: -22px; }
     }
 
     /* =========================================================
@@ -370,7 +404,7 @@
       display: flex; gap: var(--space-4); align-items: flex-start;
       padding: var(--space-5); background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius);
     }
-    .problem__item .icon-x { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #f0f1ec; color: var(--c-muted); }
+    .problem__item .icon-x { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #efede2; color: var(--c-muted); }
     .problem__item .icon-x svg { width: 16px; height: 16px; }
     .problem__item h3 { font-size: 1.0625rem; }
     .problem__item p { font-size: var(--fs-sm); color: var(--c-muted); margin-top: 2px; }
@@ -378,11 +412,10 @@
       margin-top: var(--space-3);
       display: flex; gap: var(--space-4); align-items: center;
       padding: var(--space-5) var(--space-6); border-radius: var(--radius);
-      background: var(--c-ink); color: var(--c-on-dark);
+      background: var(--c-dark); color: var(--c-on-dark);
     }
-    .solution__icon { flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--c-accent); color: #fff; }
-    .solution__icon svg { width: 24px; height: 24px; }
-    .solution strong { display: block; font-size: var(--fs-lg); letter-spacing: -0.01em; }
+    .solution__logo { flex-shrink: 0; width: 54px; height: 54px; border-radius: 50%; }
+    .solution strong { display: block; font-family: var(--font-serif); font-weight: 600; font-size: var(--fs-lg); letter-spacing: -0.01em; }
     .solution span { color: var(--c-on-dark-muted); font-size: var(--fs-sm); }
     @media (max-width: 860px) { .problem__grid { grid-template-columns: 1fr; } }
 
@@ -406,12 +439,12 @@
     .feature h3 { font-size: 1.125rem; }
     .feature p { margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-muted); }
     .feature--wide {
-      grid-column: span 2; background: var(--c-ink); color: var(--c-on-dark); border-color: var(--c-ink);
+      grid-column: span 2; background: var(--c-dark); color: var(--c-on-dark); border-color: var(--c-dark);
       display: flex; flex-direction: column; justify-content: space-between;
     }
     .feature--wide p { color: var(--c-on-dark-muted); }
-    .feature--wide .feature__icon { background: rgba(79, 191, 127, .16); color: var(--c-accent-bright); }
-    .feature--wide:hover .feature__icon { background: var(--c-accent-bright); color: var(--c-ink); }
+    .feature--wide .feature__icon { background: rgba(190, 206, 159, .16); color: var(--c-brand-pale); }
+    .feature--wide:hover .feature__icon { background: var(--c-brand-pale); color: var(--c-dark); }
     @media (max-width: 1024px) { .features { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .features { grid-template-columns: 1fr; } .feature--wide { grid-column: auto; } }
 
@@ -426,48 +459,62 @@
     }
     .step:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .step__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6); }
-    .step__num { font-size: 3.25rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--c-line); }
-    .step:hover .step__num { -webkit-text-stroke-color: var(--c-accent); }
-    .step__icon { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--c-ink); color: #fff; }
+    .step__num { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: var(--c-brand-mist); transition: color var(--dur) var(--ease); }
+    .step:hover .step__num { color: var(--c-brand); }
+    .step__icon { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--c-dark); color: var(--c-brand-pale); }
     .step__icon svg { width: 26px; height: 26px; }
-    .step h3 { font-size: var(--fs-xl); }
+    .step h3 { font-size: var(--fs-xl); font-family: var(--font-serif); font-weight: 600; }
     .step p { margin-top: var(--space-3); color: var(--c-muted); }
     @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
 
     /* =========================================================
        9. BESTILL
        ========================================================= */
-    .order { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-5); align-items: start; }
+    .order { display: grid; grid-template-columns: 1.1fr 0.9fr; grid-template-rows: auto 1fr; gap: var(--space-5); align-items: start; }
+    .order__products { grid-column: 1; grid-row: 1; }
+    .order__pay { grid-column: 1; grid-row: 2; }
+    .order__details { grid-column: 2; grid-row: 1 / span 2; display: grid; gap: var(--space-4); box-shadow: var(--shadow); }
     .order__panel {
       background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-lg);
       padding: clamp(1.25rem, 0.8rem + 2vw, 2rem);
     }
-    .order__details { position: sticky; top: calc(var(--header-h) + var(--space-5)); display: grid; gap: var(--space-4); box-shadow: var(--shadow); }
     .order__label {
       display: block; margin-bottom: var(--space-4);
       font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-muted);
     }
 
-    /* Variantvalg (plast / metall) */
+    /* Variantvalg */
     .variants__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
     .variant {
       position: relative; display: flex; flex-direction: column; overflow: hidden; cursor: pointer;
       border: 2px solid var(--c-line); border-radius: var(--radius); background: var(--c-paper);
       transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease), background-color var(--dur) var(--ease);
     }
-    .variant:hover { border-color: #c5ccbf; transform: translateY(-2px); }
+    .variant:hover { border-color: #cdcdb8; transform: translateY(-2px); }
     .variant.is-selected { border-color: var(--c-accent); background: #fff; box-shadow: 0 0 0 4px rgba(var(--c-accent-rgb), .12); }
     .variant input { position: absolute; opacity: 0; pointer-events: none; }
-    .variant:has(input:focus-visible) { outline: 3px solid var(--c-accent-bright); outline-offset: 3px; }
+    .variant:has(input:focus-visible) { outline: 3px solid var(--c-brand); outline-offset: 3px; }
+    .variant.is-disabled { cursor: not-allowed; }
+    .variant.is-disabled:hover { transform: none; border-color: var(--c-line); }
+    .variant.is-disabled .variant__media, .variant.is-disabled .variant__name,
+    .variant.is-disabled .variant__desc, .variant.is-disabled .variant__price { opacity: .62; }
     .variant__media {
       position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center;
-      background: linear-gradient(160deg, #ffffff, #e8ebe3);
+      background: linear-gradient(160deg, #fffdf8, #e9e9d6);
     }
     .variant__media svg { width: 52%; height: auto; }
     .variant__body { display: grid; gap: 2px; padding: var(--space-4); }
     .variant__name { font-weight: 700; font-size: 1.0625rem; letter-spacing: -0.01em; }
     .variant__desc { font-size: var(--fs-sm); color: var(--c-muted); }
     .variant__price { margin-top: var(--space-2); font-weight: 750; font-size: var(--fs-lg); }
+    .variant__price--soon { font-size: var(--fs-sm); font-weight: 650; color: var(--c-muted); }
+    .variant__tag {
+      justify-self: start; margin-bottom: var(--space-2);
+      padding: 3px 10px; border-radius: var(--radius-pill);
+      font-size: 0.75rem; font-weight: 700; letter-spacing: .02em;
+      background: var(--c-accent); color: #fff;
+    }
+    .variant__tag--soon { background: var(--c-ink-2); }
     .variant__check {
       position: absolute; top: 12px; right: 12px; z-index: 1;
       width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
@@ -477,6 +524,7 @@
     .variant__check svg { width: 14px; height: 14px; color: #fff; opacity: 0; transition: opacity var(--dur) var(--ease); }
     .variant.is-selected .variant__check { background: var(--c-accent); border-color: var(--c-accent); }
     .variant.is-selected .variant__check svg { opacity: 1; }
+    .variant.is-disabled .variant__check { display: none; }
 
     /* Antall */
     .qty { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); }
@@ -487,7 +535,7 @@
       font: inherit; font-size: 1.375rem; line-height: 1; color: var(--c-ink);
       transition: background-color var(--dur) var(--ease);
     }
-    .qty__control button:hover { background: rgba(18, 26, 22, .07); }
+    .qty__control button:hover { background: rgba(36, 48, 31, .07); }
     .qty__control input {
       width: 52px; border: 0; background: none; text-align: center;
       font: inherit; font-size: var(--fs-lg); font-weight: 700; color: var(--c-ink);
@@ -498,7 +546,34 @@
 
     .order__included { display: grid; gap: var(--space-2); margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--c-line); font-size: var(--fs-sm); color: var(--c-ink-2); }
     .order__included li { display: flex; align-items: center; gap: var(--space-2); }
-    .order__included svg { width: 18px; height: 18px; color: var(--c-accent); flex-shrink: 0; }
+    .order__included svg { width: 18px; height: 18px; color: var(--c-brand); flex-shrink: 0; }
+
+    /* Betaling med Vipps */
+    .pay { background: var(--c-dark); color: var(--c-on-dark); border-color: var(--c-dark); }
+    .pay .order__label { color: var(--c-on-dark-muted); margin-bottom: var(--space-2); }
+    .pay h3 { font-family: var(--font-serif); font-weight: 600; font-size: var(--fs-xl); }
+    .pay__number {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3);
+      margin-top: var(--space-5); padding: var(--space-4) var(--space-5);
+      border-radius: var(--radius); background: rgba(247, 243, 232, .07); border: 1px solid rgba(247, 243, 232, .14);
+    }
+    .pay__number small { display: block; font-size: var(--fs-xs); color: var(--c-on-dark-muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .pay__number strong { font-family: var(--font-serif); font-size: 2rem; font-weight: 600; letter-spacing: .04em; line-height: 1.1; color: #fff; }
+    .copy-btn {
+      min-height: 40px; padding: 0 var(--space-4); border-radius: var(--radius-pill);
+      border: 1.5px solid rgba(247, 243, 232, .3); background: transparent; color: var(--c-on-dark);
+      font: inherit; font-size: var(--fs-sm); font-weight: 600; cursor: pointer;
+      transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+    .copy-btn:hover { background: var(--c-brand-pale); color: var(--c-dark); border-color: var(--c-brand-pale); }
+    .pay__steps { margin-top: var(--space-5); display: grid; gap: var(--space-3); counter-reset: pay; }
+    .pay__steps li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--fs-sm); color: var(--c-on-dark-muted); counter-increment: pay; }
+    .pay__steps li::before {
+      content: counter(pay); flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      display: grid; place-items: center; font-size: 0.8rem; font-weight: 700;
+      background: var(--c-brand-pale); color: var(--c-dark);
+    }
+    .pay__steps strong { color: var(--c-on-dark); }
 
     /* Oppsummering */
     .summary { display: grid; gap: var(--space-2); padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--c-paper); font-size: var(--fs-sm); }
@@ -508,8 +583,8 @@
     .summary__row--total span:first-child { color: var(--c-ink); }
 
     @media (max-width: 960px) {
-      .order { grid-template-columns: 1fr; }
-      .order__details { position: static; }
+      .order { grid-template-columns: 1fr; grid-template-rows: none; }
+      .order__products, .order__pay, .order__details { grid-column: auto; grid-row: auto; }
     }
     @media (max-width: 420px) { .variants__grid { gap: var(--space-3); } .variant__body { padding: var(--space-3); } }
 
@@ -526,12 +601,12 @@
     .tl-item__dot {
       position: relative; z-index: 1; width: 48px; height: 48px; border-radius: 50%;
       display: grid; place-items: center; font-weight: 750; font-size: var(--fs-sm);
-      background: var(--c-ink); border: 2px solid var(--c-ink); color: #fff;
+      background: var(--c-dark); border: 2px solid var(--c-dark); color: var(--c-brand-pale);
     }
-    .tl-item--final .tl-item__dot { background: var(--c-accent); border-color: var(--c-accent); box-shadow: 0 0 0 6px rgba(var(--c-accent-rgb), .14); }
+    .tl-item--final .tl-item__dot { background: var(--c-accent); border-color: var(--c-accent); color: #fff; box-shadow: 0 0 0 6px rgba(var(--c-brand-rgb), .2); }
     .tl-item--final .tl-item__dot svg { width: 20px; height: 20px; }
     .tl-item__card { padding: var(--space-5); border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-line); }
-    .tl-item--final .tl-item__card { border-color: var(--c-accent); }
+    .tl-item--final .tl-item__card { border-color: var(--c-brand); }
     .tl-item__card h3 { font-size: 1.125rem; }
     .tl-item__card p { margin-top: var(--space-2); color: var(--c-muted); font-size: var(--fs-sm); }
     .tl-item__card .btn { margin-top: var(--space-4); }
@@ -543,19 +618,19 @@
     .sustain { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: center; }
     .sustain__intro h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
     .sustain__intro p { margin-top: var(--space-4); color: var(--c-on-dark-muted); font-size: var(--fs-lg); }
-    .sustain__list { display: grid; border-top: 1px solid rgba(255, 255, 255, .12); }
+    .sustain__list { display: grid; border-top: 1px solid rgba(247, 243, 232, .14); }
     .sustain__list li {
       display: flex; align-items: center; gap: var(--space-4);
-      padding: var(--space-5) 0; border-bottom: 1px solid rgba(255, 255, 255, .12);
+      padding: var(--space-5) 0; border-bottom: 1px solid rgba(247, 243, 232, .14);
       font-size: var(--fs-lg); font-weight: 600; letter-spacing: -0.01em;
       transition: padding-left var(--dur) var(--ease), color var(--dur) var(--ease);
     }
     .sustain__list li:hover { padding-left: var(--space-3); color: #fff; }
-    .sustain__list .n { font-size: var(--fs-xs); font-weight: 700; color: var(--c-accent-bright); min-width: 28px; letter-spacing: .05em; }
+    .sustain__list .n { font-size: var(--fs-xs); font-weight: 700; color: var(--c-brand-pale); min-width: 28px; letter-spacing: .05em; }
     @media (max-width: 860px) { .sustain { grid-template-columns: 1fr; } }
 
     /* =========================================================
-       12. OM OSS
+       12. OM OSS – teamet
        ========================================================= */
     .about__head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 1rem + 3vw, 4rem); align-items: end; margin-bottom: var(--space-7); }
     .about__head h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
@@ -565,20 +640,25 @@
     .team { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); }
     .member {
       flex: 0 1 calc((100% - 4 * var(--space-4)) / 5); min-width: 0;
-      padding: var(--space-3) var(--space-3) var(--space-4);
+      padding: var(--space-3) var(--space-3) var(--space-5);
       border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-line);
       transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
     }
-    .member:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .member:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .member__photo {
+      --g1: var(--c-brand); --g2: #93a67f;
       position: relative; aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden;
       display: grid; place-items: center;
-      background: linear-gradient(160deg, #eef1e9, #dfe4d9); color: #a9b3a7;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .25), transparent 55%), linear-gradient(150deg, var(--g1), var(--g2));
     }
-    .member__photo svg { width: 40%; height: 40%; }
-    .member h3 { font-size: 1rem; margin-top: var(--space-3); padding-inline: var(--space-1); }
-    .member p { font-size: var(--fs-sm); color: var(--c-muted); padding-inline: var(--space-1); }
-    @media (max-width: 960px) { .member { flex-basis: calc((100% - 2 * var(--space-4)) / 3); } }
+    .member:nth-child(2) .member__photo { --g1: #6a7f5a; --g2: #a3b58b; }
+    .member:nth-child(3) .member__photo { --g1: #5d7150; --g2: #8fa27b; }
+    .member:nth-child(4) .member__photo { --g1: #7d9268; --g2: #b2c294; }
+    .member:nth-child(5) .member__photo { --g1: #677b58; --g2: #9cb085; }
+    .member__initials { font-family: var(--font-serif); font-weight: 600; font-size: clamp(2rem, 1.4rem + 1.6vw, 2.75rem); color: var(--c-cream); letter-spacing: -0.02em; }
+    .member h3 { font-family: var(--font-serif); font-weight: 600; font-size: 1.25rem; margin-top: var(--space-4); padding-inline: var(--space-2); }
+    .member p { font-size: 0.875rem; color: var(--c-muted); padding-inline: var(--space-2); margin-top: 4px; line-height: 1.45; hyphens: manual; }
+    @media (max-width: 1040px) { .member { flex-basis: calc((100% - 2 * var(--space-4)) / 3); } }
     @media (max-width: 860px) { .about__head { grid-template-columns: 1fr; } }
     @media (max-width: 560px) { .member { flex-basis: calc((100% - var(--space-4)) / 2); } }
 
@@ -597,14 +677,14 @@
     .b2b .btn { margin-top: var(--space-6); white-space: normal; text-align: center; }
     .b2b__benefits { display: grid; gap: var(--space-3); align-content: center; }
     .b2b__benefit { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--c-paper); }
-    .b2b__benefit svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--c-accent); }
+    .b2b__benefit svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--c-brand); }
     .b2b__benefit span { font-weight: 600; }
     @media (max-width: 860px) { .b2b { grid-template-columns: 1fr; } }
 
     /* =========================================================
-       14. SKJEMAFELT (brukes av både bestilling og kontakt)
+       14. SKJEMAFELT (bestilling og kontakt)
        ========================================================= */
-    .field { display: grid; gap: var(--space-2); }
+    .field { display: grid; gap: var(--space-2); align-content: start; }
     .field label { font-size: var(--fs-sm); font-weight: 600; }
     .field label .req { color: var(--c-accent); }
     .field label .opt { color: var(--c-muted); font-weight: 500; }
@@ -616,45 +696,67 @@
     }
     .field select {
       appearance: none; -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356625b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b6656' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 14px center; background-size: 18px; padding-right: 44px;
     }
     .field textarea { min-height: 130px; resize: vertical; }
     .field textarea.short { min-height: 84px; }
-    .field input:hover, .field textarea:hover, .field select:hover { border-color: #c9cfc3; }
+    .field input:hover, .field textarea:hover, .field select:hover { border-color: #cbcab4; }
     .field input:focus, .field textarea:focus, .field select:focus {
       outline: none; border-color: var(--c-accent); background: #fff;
-      box-shadow: 0 0 0 4px rgba(var(--c-accent-rgb), .15);
+      box-shadow: 0 0 0 4px rgba(var(--c-brand-rgb), .22);
     }
     .field.has-error input, .field.has-error textarea { border-color: var(--c-error); }
     .field__error { font-size: var(--fs-xs); color: var(--c-error); font-weight: 600; }
     .field__error:empty { display: none; }
     .form__note { font-size: var(--fs-xs); color: var(--c-muted); }
     .form__status { display: none; padding: var(--space-4); border-radius: var(--radius-sm); font-size: var(--fs-sm); font-weight: 600; }
-    .form__status.is-success { display: block; background: #e6f4ea; color: var(--c-success); }
-    .form__status.is-error { display: block; background: #fdecec; color: var(--c-error); }
+    .form__status.is-success { display: block; background: var(--c-accent-soft); color: var(--c-success); }
+    .form__status.is-error { display: block; background: #f9e7e1; color: var(--c-error); }
     .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-    @media (max-width: 560px) { .form__row { grid-template-columns: 1fr; } }
+    .form__row--zip { grid-template-columns: minmax(0, 8rem) 1fr; }
+    @media (max-width: 560px) { .form__row:not(.form__row--zip) { grid-template-columns: 1fr; } }
 
     /* =========================================================
        15. KONTAKT
        ========================================================= */
-    .contact { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
+    .contact { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
     .contact__info h2 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
     .contact__info > p { margin-top: var(--space-4); color: var(--c-muted); font-size: var(--fs-lg); }
-    .contact__list { margin-top: var(--space-6); display: grid; gap: var(--space-3); }
-    .contact__list li { display: flex; align-items: center; gap: var(--space-4); }
-    .contact__list .ci { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--c-surface); border: 1px solid var(--c-line); flex-shrink: 0; }
-    .contact__list .ci svg { width: 20px; height: 20px; color: var(--c-accent); }
-    .contact__list small { display: block; font-size: var(--fs-xs); color: var(--c-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
-    .socials { display: flex; gap: var(--space-2); margin-top: var(--space-6); }
-    .socials a {
-      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
-      border: 1px solid var(--c-line); background: var(--c-surface); color: var(--c-ink);
+
+    .people { margin-top: var(--space-6); display: grid; gap: var(--space-3); }
+    .person {
+      display: grid; grid-template-columns: 56px 1fr; gap: var(--space-4); align-items: start;
+      padding: var(--space-5); border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-line);
+    }
+    .person__avatar {
+      width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(150deg, var(--c-brand), #9fb288); color: var(--c-cream);
+      font-family: var(--font-serif); font-weight: 600; font-size: 1.25rem;
+    }
+    .person h3 { font-size: 1.0625rem; }
+    .person__role { font-size: var(--fs-sm); color: var(--c-accent); font-weight: 600; margin-top: 2px; }
+    .person__links { margin-top: var(--space-3); display: grid; gap: 6px; }
+    .person__links a {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--fs-sm); color: var(--c-ink-2); text-decoration: none; overflow-wrap: anywhere;
+      transition: color var(--dur) var(--ease);
+    }
+    .person__links a:hover { color: var(--c-accent); text-decoration: underline; text-underline-offset: 3px; }
+    .person__links svg { width: 16px; height: 16px; color: var(--c-brand); flex-shrink: 0; }
+
+    .follow { margin-top: var(--space-6); }
+    .follow h3 { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-muted); }
+    .follow__links { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+    .social-pill {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      min-height: 44px; padding: 0 var(--space-4) 0 var(--space-3);
+      border-radius: var(--radius-pill); border: 1px solid var(--c-line); background: var(--c-surface);
+      font-size: var(--fs-sm); font-weight: 600; text-decoration: none; color: var(--c-ink);
       transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
     }
-    .socials a:hover { background: var(--c-ink); color: #fff; border-color: var(--c-ink); transform: translateY(-2px); }
-    .socials svg { width: 18px; height: 18px; }
+    .social-pill svg { width: 20px; height: 20px; }
+    .social-pill:hover { background: var(--c-dark); color: var(--c-cream); border-color: var(--c-dark); transform: translateY(-2px); }
 
     .form {
       padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); border-radius: var(--radius-lg);
@@ -666,26 +768,33 @@
     /* =========================================================
        16. FOOTER
        ========================================================= */
-    .site-footer { background: var(--c-ink); color: var(--c-on-dark); padding-block: var(--space-8) var(--space-6); }
-    .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--space-6); }
-    .site-footer .logo { color: #fff; }
+    .site-footer { background: var(--c-dark-2); color: var(--c-on-dark); padding-block: var(--space-8) var(--space-6); }
+    .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 0.8fr; gap: var(--space-6); }
+    .site-footer .logo__img { width: 64px; height: 64px; }
+    .site-footer .logo__word { color: var(--c-cream); font-size: 1.6rem; }
     .footer__about { margin-top: var(--space-4); max-width: 22rem; color: var(--c-on-dark-muted); font-size: var(--fs-sm); }
-    .footer__alt { margin-top: var(--space-3); font-size: var(--fs-xs); color: #7c867f; }
+    .footer__alt { margin-top: var(--space-3); font-size: var(--fs-xs); color: #8c9684; }
     .site-footer h4 { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .12em; color: var(--c-on-dark-muted); margin-bottom: var(--space-4); font-weight: 700; }
     .footer__links { display: grid; gap: var(--space-2); }
-    .footer__links a, .footer__links span { font-size: var(--fs-sm); color: var(--c-on-dark); text-decoration: none; opacity: .88; transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease); }
-    .footer__links a:hover { opacity: 1; color: var(--c-accent-bright); }
-    .site-footer .socials { margin-top: 0; }
-    .site-footer .socials a { background: transparent; border-color: rgba(255, 255, 255, .16); color: var(--c-on-dark); }
-    .site-footer .socials a:hover { background: var(--c-accent-bright); border-color: var(--c-accent-bright); color: var(--c-ink); }
+    .footer__links a, .footer__links span { font-size: var(--fs-sm); color: var(--c-on-dark); text-decoration: none; opacity: .9; overflow-wrap: anywhere; transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease); }
+    .footer__links a:hover { opacity: 1; color: var(--c-brand-pale); }
+    .footer__links .muted { color: var(--c-on-dark-muted); font-size: var(--fs-xs); }
+    .footer__socials { display: flex; gap: var(--space-2); }
+    .footer__socials a {
+      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid rgba(247, 243, 232, .18); color: var(--c-on-dark);
+      transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+    .footer__socials a:hover { background: var(--c-brand-pale); border-color: var(--c-brand-pale); color: var(--c-dark); transform: translateY(-2px); }
+    .footer__socials svg { width: 19px; height: 19px; }
     .footer__bottom {
-      margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255, 255, 255, .1);
+      margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(247, 243, 232, .1);
       display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3);
       font-size: var(--fs-xs); color: var(--c-on-dark-muted);
     }
     .footer__bottom a { color: var(--c-on-dark-muted); text-decoration: none; }
     .footer__bottom a:hover { color: #fff; }
-    @media (max-width: 860px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__brand { grid-column: 1 / -1; } }
+    @media (max-width: 960px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__brand { grid-column: 1 / -1; } }
     @media (max-width: 480px) { .footer__grid { grid-template-columns: 1fr; } }
 
     /* =========================================================
@@ -715,14 +824,12 @@
   <header class="site-header" id="header">
     <nav class="nav container" aria-label="Hovedmeny">
       <a href="#hjem" class="logo" aria-label="Sekketøylen – til forsiden">
-        <svg class="logo__mark" viewBox="0 0 36 36" aria-hidden="true">
-          <rect class="logo__bg" width="36" height="36" rx="10"/>
-          <path class="logo__hook" d="M14 8v9a5.5 5.5 0 0 0 5.5 5.5h0a4 4 0 0 1 0 8" fill="none" stroke-width="3.2" stroke-linecap="round"/>
-        </svg>
-        <span>Sekketøylen</span>
+        <img class="logo__img" src="data:image/webp;base64,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" alt="" width="46" height="46">
+        <span class="logo__word">sekketøylen</span>
       </a>
 
       <div class="nav__menu" id="navMenu">
+        <span class="nav__indicator" aria-hidden="true"></span>
         <ul class="nav__links">
           <li><a href="#hjem" data-nav>Hjem</a></li>
           <li><a href="#produktet" data-nav>Produktet</a></li>
@@ -733,7 +840,6 @@
         </ul>
       </div>
 
-      <!-- Kjøp-knappen står alltid synlig til høyre – også på mobil, ved siden av menyknappen -->
       <div class="nav__actions">
         <a href="#bestill" class="btn btn--sm nav__cart">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
@@ -754,7 +860,7 @@
     <section class="hero" id="hjem" aria-labelledby="hero-tittel">
       <div class="container hero__grid">
         <div class="hero__content">
-          <span class="hero__badge reveal"><span class="hero__badge-dot" aria-hidden="true"></span>Krok for pult · I plast eller metall</span>
+          <span class="hero__badge reveal"><span class="hero__badge-dot" aria-hidden="true"></span>Krok for pult · Nå tilgjengelig i plast</span>
           <h1 id="hero-tittel" class="reveal" data-delay="1">En Krok.<br><span class="accent">Mindre Kaos</span></h1>
           <p class="hero__lead reveal" data-delay="2">Sekketøylen er den smarte kroken som holder sekken eller vesken unna gulvet og gir deg bedre plass rundt pulten.</p>
           <div class="hero__actions reveal" data-delay="3">
@@ -767,7 +873,7 @@
           <ul class="hero__points reveal" data-delay="3">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Skrus fast</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gummibeskyttelse</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Plast eller metall</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Plassbesparende</li>
           </ul>
         </div>
 
@@ -775,31 +881,30 @@
           <!-- PRODUKTBILDE: legg «sekketoylen.jpg» i samme mappe, så vises det her automatisk -->
           <figure class="product-visual">
             <svg viewBox="0 0 520 440" role="img" aria-label="Illustrasjon av Sekketøylen festet på siden av en pult med en sekk som henger over gulvet">
-              <line x1="20" y1="410" x2="500" y2="410" stroke="#d3d8cd" stroke-width="2" stroke-dasharray="4 8"/>
-              <rect x="30" y="118" width="342" height="26" rx="6" fill="#121a16"/>
-              <rect x="290" y="144" width="20" height="266" rx="3" fill="#26332c"/>
-              <rect x="60" y="144" width="20" height="266" rx="3" fill="#26332c" opacity=".35"/>
+              <line x1="20" y1="410" x2="500" y2="410" stroke="#d6d4c1" stroke-width="2" stroke-dasharray="4 8"/>
+              <rect x="30" y="118" width="342" height="26" rx="6" fill="#2c3826"/>
+              <rect x="290" y="144" width="20" height="266" rx="3" fill="#3a4733"/>
+              <rect x="60" y="144" width="20" height="266" rx="3" fill="#3a4733" opacity=".3"/>
               <g class="float">
-                <rect x="372" y="114" width="6" height="34" rx="2" fill="#26332c"/>
-                <rect class="ill-accent" x="378" y="110" width="14" height="42" rx="4"/>
-                <circle cx="385" cy="120" r="2.2" fill="#e2f1e7"/>
-                <circle cx="385" cy="142" r="2.2" fill="#e2f1e7"/>
-                <path class="ill-accent-stroke" d="M392 131 H420 Q446 131 446 157 V188 Q446 214 422 214 Q404 214 404 198" fill="none" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M408 286 C408 236 414 216 425 216 C436 216 444 236 444 286" fill="none" stroke="#56625b" stroke-width="5" stroke-linecap="round"/>
-                <rect x="378" y="262" width="96" height="112" rx="26" fill="#ffffff" stroke="#56625b" stroke-width="3"/>
-                <rect x="396" y="314" width="60" height="40" rx="12" fill="none" stroke="#56625b" stroke-width="2.5"/>
-                <line x1="410" y1="326" x2="442" y2="326" stroke="#56625b" stroke-width="2.5" stroke-linecap="round"/>
+                <rect x="372" y="114" width="6" height="34" rx="2" fill="#3a4733"/>
+                <rect x="378" y="110" width="14" height="42" rx="4" fill="#4d6340"/>
+                <circle cx="385" cy="120" r="2.2" fill="#dae2b9"/>
+                <circle cx="385" cy="142" r="2.2" fill="#dae2b9"/>
+                <path d="M392 131 H420 Q446 131 446 157 V188 Q446 214 422 214 Q404 214 404 198" fill="none" stroke="#768a65" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M408 286 C408 236 414 216 425 216 C436 216 444 236 444 286" fill="none" stroke="#5b6656" stroke-width="5" stroke-linecap="round"/>
+                <rect x="378" y="262" width="96" height="112" rx="26" fill="#fffdf8" stroke="#5b6656" stroke-width="3"/>
+                <rect x="396" y="314" width="60" height="40" rx="12" fill="none" stroke="#5b6656" stroke-width="2.5"/>
+                <line x1="410" y1="326" x2="442" y2="326" stroke="#5b6656" stroke-width="2.5" stroke-linecap="round"/>
               </g>
-              <g class="ill-accent-stroke" stroke-width="2">
+              <g stroke="#768a65" stroke-width="2">
                 <line x1="492" y1="378" x2="492" y2="404"/>
                 <line x1="486" y1="378" x2="498" y2="378"/>
                 <line x1="486" y1="404" x2="498" y2="404"/>
               </g>
-              <text x="40" y="70" font-family="system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.6" fill="#56625b">SEKKETØYLEN</text>
-              <text x="40" y="92" font-family="system-ui, sans-serif" font-size="13" fill="#929c95">Krok for siden av pulten</text>
             </svg>
             <img class="photo-cover" src="sekketoylen.jpg" alt="Sekketøylen festet på siden av en pult" onerror="this.remove()">
           </figure>
+          <img class="hero__seal" src="data:image/webp;base64,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" alt="Sekketøylen-logo: En krok. Mindre kaos." width="156" height="156">
         </div>
       </div>
     </section>
@@ -830,7 +935,7 @@
             <div><h3>Skaper rot</h3><p>Sekker og vesker på gulvet gjør hele rommet mindre ryddig.</p></div>
           </div>
           <div class="solution reveal" data-delay="3">
-            <span class="solution__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M12 3v7a5 5 0 1 1-5 5"/></svg></span>
+            <img class="solution__logo" src="data:image/webp;base64,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" alt="" width="54" height="54">
             <div><strong>Løsningen: Sekketøylen</strong><span>En enkel krok på siden av pulten – så sekken har en fast plass.</span></div>
           </div>
         </div>
@@ -845,7 +950,7 @@
         <div class="section-head reveal">
           <span class="eyebrow">Produktet</span>
           <h2 id="produkt-tittel">Liten krok. Stor forskjell rundt pulten.</h2>
-          <p>Sekketøylen festes på siden av pulten og gir sekken eller vesken et fast sted å henge. Designet er moderne og minimalistisk, og du velger selv om du vil ha den i plast eller metall.</p>
+          <p>Sekketøylen festes på siden av pulten og gir sekken eller vesken et fast sted å henge. Designet er moderne og minimalistisk. Plastvarianten kan bestilles nå, og en variant i metall kommer snart.</p>
         </div>
 
         <div class="features">
@@ -930,22 +1035,23 @@
     </section>
 
     <!-- =========================================================
-         BESTILL – velg plast eller metall, antall og send bestilling
-         Priser og mottaker-e-post fylles inn i INNSTILLINGER nederst i filen.
+         BESTILL – plast kan bestilles, metall kommer snart. Betaling med Vipps.
+         Pris, Vipps-nummer og mottakere settes i INNSTILLINGER nederst i filen.
          ========================================================= -->
     <section class="section" id="bestill" aria-labelledby="bestill-tittel">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Bestill</span>
-          <h2 id="bestill-tittel">Velg din Sekketøylen</h2>
-          <p>Sekketøylen finnes i plast og metall. Velg variant og antall, fyll inn opplysningene dine og send bestillingen direkte til oss.</p>
+          <h2 id="bestill-tittel">Bestill din Sekketøylen</h2>
+          <p>Sekketøylen i plast er klar for bestilling. Velg antall, fyll inn leveringsinformasjonen og betal enkelt med Vipps.</p>
         </div>
 
         <form class="order" id="bestillingsskjema" novalidate>
-          <!-- Venstre: produktvalg -->
-          <div class="order__panel reveal">
+
+          <!-- 1–2: Produkt og antall -->
+          <div class="order__panel order__products reveal">
             <fieldset>
-              <legend class="order__label">1. Velg materiale</legend>
+              <legend class="order__label">1. Velg variant</legend>
               <div class="variants__grid">
 
                 <label class="variant is-selected">
@@ -953,43 +1059,42 @@
                   <span class="variant__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span class="variant__media">
                     <svg viewBox="0 0 120 100" aria-hidden="true">
-                      <rect x="16" y="16" width="4" height="36" rx="1.5" fill="#56625b"/>
-                      <rect x="20" y="12" width="12" height="44" rx="3" fill="#2b332f"/>
-                      <path d="M32 33 H62 Q86 33 86 57 V62 Q86 86 64 86 Q48 86 48 72" fill="none" stroke="#2b332f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="16" y="16" width="4" height="36" rx="1.5" fill="#5b6656"/>
+                      <rect x="20" y="12" width="12" height="44" rx="3" fill="#4d6340"/>
+                      <path d="M32 33 H62 Q86 33 86 57 V62 Q86 86 64 86 Q48 86 48 72" fill="none" stroke="#768a65" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <!-- Bilde: legg «sekketoylen-plast.jpg» i samme mappe -->
                     <img class="photo-cover" src="sekketoylen-plast.jpg" alt="Sekketøylen i plast" onerror="this.remove()">
                   </span>
                   <span class="variant__body">
+                    <span class="variant__tag">Tilgjengelig nå</span>
                     <span class="variant__name">Sekketøylen Plast</span>
                     <span class="variant__desc">Lett og enkel variant</span>
                     <span class="variant__price" data-pris="plast"><span class="placeholder">[pris]</span></span>
                   </span>
                 </label>
 
-                <label class="variant">
-                  <input type="radio" name="variant" value="metall">
-                  <span class="variant__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <label class="variant is-disabled" aria-disabled="true">
+                  <input type="radio" name="variant" value="metall" disabled>
                   <span class="variant__media">
                     <svg viewBox="0 0 120 100" aria-hidden="true">
                       <defs>
                         <linearGradient id="metall" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0" stop-color="#e6e9ec"/>
-                          <stop offset=".5" stop-color="#8d969d"/>
-                          <stop offset="1" stop-color="#c9ced3"/>
+                          <stop offset="0" stop-color="#e6e8e3"/>
+                          <stop offset=".5" stop-color="#8e958b"/>
+                          <stop offset="1" stop-color="#cbcfc6"/>
                         </linearGradient>
                       </defs>
-                      <rect x="16" y="16" width="4" height="36" rx="1.5" fill="#56625b"/>
+                      <rect x="16" y="16" width="4" height="36" rx="1.5" fill="#5b6656"/>
                       <rect x="20" y="12" width="12" height="44" rx="3" fill="url(#metall)"/>
                       <path d="M32 33 H62 Q86 33 86 57 V62 Q86 86 64 86 Q48 86 48 72" fill="none" stroke="url(#metall)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <!-- Bilde: legg «sekketoylen-metall.jpg» i samme mappe -->
                     <img class="photo-cover" src="sekketoylen-metall.jpg" alt="Sekketøylen i metall" onerror="this.remove()">
                   </span>
                   <span class="variant__body">
+                    <span class="variant__tag variant__tag--soon">Kommer snart</span>
                     <span class="variant__name">Sekketøylen Metall</span>
                     <span class="variant__desc">Solid variant i metall</span>
-                    <span class="variant__price" data-pris="metall"><span class="placeholder">[pris]</span></span>
+                    <span class="variant__price variant__price--soon">Kommer snart</span>
                   </span>
                 </label>
 
@@ -1005,29 +1110,67 @@
               </div>
             </div>
 
-            <ul class="order__included" aria-label="Felles for begge variantene">
+            <ul class="order__included" aria-label="Om produktet">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Skrus fast på siden av pulten</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gummibeskyttelse som skåner pultens overflate</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Moderne, minimalistisk design</li>
             </ul>
           </div>
 
-          <!-- Høyre: kundeopplysninger og oppsummering -->
+          <!-- Betaling med Vipps -->
+          <div class="order__panel order__pay pay reveal" data-delay="1">
+            <span class="order__label">Betaling</span>
+            <h3>Betal enkelt med Vipps</h3>
+            <div class="pay__number">
+              <div>
+                <small>Vipps-nummer</small>
+                <strong data-vipps>93989</strong>
+              </div>
+              <button type="button" class="copy-btn" data-copy-vipps>Kopier nummer</button>
+            </div>
+            <ol class="pay__steps">
+              <li><span>Fyll ut og send bestillingen.</span></li>
+              <li><span>Åpne Vipps og betal totalbeløpet til <strong data-vipps>93989</strong>.</span></li>
+              <li><span>Skriv navnet ditt i meldingsfeltet, så vi kan koble betalingen til bestillingen.</span></li>
+            </ol>
+          </div>
+
+          <!-- 3: Leveringsinformasjon og oppsummering -->
           <div class="order__panel order__details reveal" data-delay="1">
-            <span class="order__label">3. Dine opplysninger</span>
+            <span class="order__label">3. Leveringsinformasjon</span>
             <div class="field">
-              <label for="b-navn">Navn <span class="req" aria-hidden="true">*</span></label>
+              <label for="b-navn">Fullt navn <span class="req" aria-hidden="true">*</span></label>
               <input id="b-navn" name="navn" type="text" autocomplete="name" required aria-describedby="b-navn-feil">
               <span class="field__error" id="b-navn-feil" aria-live="polite"></span>
             </div>
-            <div class="field">
-              <label for="b-epost">E-post <span class="req" aria-hidden="true">*</span></label>
-              <input id="b-epost" name="epost" type="email" autocomplete="email" inputmode="email" required aria-describedby="b-epost-feil">
-              <span class="field__error" id="b-epost-feil" aria-live="polite"></span>
+            <div class="form__row">
+              <div class="field">
+                <label for="b-epost">E-post <span class="req" aria-hidden="true">*</span></label>
+                <input id="b-epost" name="epost" type="email" autocomplete="email" inputmode="email" required aria-describedby="b-epost-feil">
+                <span class="field__error" id="b-epost-feil" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="b-telefon">Telefon <span class="req" aria-hidden="true">*</span></label>
+                <input id="b-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="b-telefon-feil">
+                <span class="field__error" id="b-telefon-feil" aria-live="polite"></span>
+              </div>
             </div>
             <div class="field">
-              <label for="b-telefon">Telefon <span class="opt">(valgfritt)</span></label>
-              <input id="b-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel">
+              <label for="b-adresse">Adresse <span class="req" aria-hidden="true">*</span></label>
+              <input id="b-adresse" name="adresse" type="text" autocomplete="street-address" required aria-describedby="b-adresse-feil">
+              <span class="field__error" id="b-adresse-feil" aria-live="polite"></span>
+            </div>
+            <div class="form__row form__row--zip">
+              <div class="field">
+                <label for="b-postnr">Postnr. <span class="req" aria-hidden="true">*</span></label>
+                <input id="b-postnr" name="postnr" type="text" autocomplete="postal-code" inputmode="numeric" maxlength="4" required data-validate="postnr" aria-describedby="b-postnr-feil">
+                <span class="field__error" id="b-postnr-feil" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="b-poststed">Poststed <span class="req" aria-hidden="true">*</span></label>
+                <input id="b-poststed" name="poststed" type="text" autocomplete="address-level2" required aria-describedby="b-poststed-feil">
+                <span class="field__error" id="b-poststed-feil" aria-live="polite"></span>
+              </div>
             </div>
             <div class="field">
               <label for="b-kommentar">Kommentar <span class="opt">(valgfritt)</span></label>
@@ -1035,9 +1178,10 @@
             </div>
 
             <div class="summary" aria-live="polite">
-              <div class="summary__row"><span>Variant</span><span id="sum-variant">Sekketøylen Plast</span></div>
+              <div class="summary__row"><span>Produkt</span><span id="sum-variant">Sekketøylen Plast</span></div>
               <div class="summary__row"><span>Antall</span><span id="sum-antall">1</span></div>
               <div class="summary__row"><span>Pris per stk.</span><span id="sum-pris"><span class="placeholder">[pris]</span></span></div>
+              <div class="summary__row"><span>Betaling</span><span>Vipps <span data-vipps>93989</span></span></div>
               <div class="summary__row summary__row--total"><span>Totalt</span><span id="sum-total"><span class="placeholder">[pris]</span></span></div>
             </div>
 
@@ -1046,14 +1190,14 @@
               Send bestilling
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
-            <p class="form__note">Når vi har mottatt bestillingen, tar vi kontakt på e-post for å bekrefte den og avtale betaling og levering.</p>
+            <p class="form__note">Når vi har mottatt bestillingen, tar vi kontakt for å bekrefte den og avtale levering.</p>
           </div>
         </form>
       </div>
     </section>
 
     <!-- =========================================================
-         PRODUKSJON OG UTVIKLING
+         FRA IDÉ TIL FERDIG PRODUKT
          ========================================================= -->
     <section class="section section--alt" id="utvikling" aria-labelledby="utvikling-tittel">
       <div class="container dev__grid">
@@ -1089,7 +1233,7 @@
             <span class="tl-item__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
             <div class="tl-item__card">
               <h3>Ferdig produkt</h3>
-              <p>Resultatet er Sekketøylen: en ferdig utviklet krok for siden av pulten, tilgjengelig i plast og metall.</p>
+              <p>Resultatet er Sekketøylen: en ferdig utviklet krok for siden av pulten. Plastvarianten kan bestilles nå – metallvarianten kommer snart.</p>
               <a href="#bestill" class="btn btn--sm">Bestill nå</a>
             </div>
           </li>
@@ -1118,8 +1262,8 @@
     </section>
 
     <!-- =========================================================
-         OM OSS – fem teammedlemmer
-         Bytt ut [Navn] og [Rolle]. Bilder: legg team-1.jpg … team-5.jpg i samme mappe.
+         OM OSS – teamet
+         Bilder: legg jon-leon.jpg, sandra.jpg, leah.jpg, hedda.jpg og julie.jpg i samme mappe.
          ========================================================= -->
     <section class="section" id="om-oss" aria-labelledby="om-tittel">
       <div class="container">
@@ -1137,43 +1281,43 @@
         <ul class="team">
           <li class="member reveal">
             <div class="member__photo">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              <img class="photo-cover" src="team-1.jpg" alt="" onerror="this.remove()">
+              <span class="member__initials" aria-hidden="true">JL</span>
+              <img class="photo-cover" src="jon-leon.jpg" alt="Jon Leon" onerror="this.remove()">
             </div>
-            <h3><span class="placeholder">[Navn]</span></h3>
-            <p><span class="placeholder">[Rolle]</span></p>
+            <h3>Jon Leon</h3>
+            <p>Daglig leder</p>
           </li>
           <li class="member reveal" data-delay="1">
             <div class="member__photo">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              <img class="photo-cover" src="team-2.jpg" alt="" onerror="this.remove()">
+              <span class="member__initials" aria-hidden="true">S</span>
+              <img class="photo-cover" src="sandra.jpg" alt="Sandra" onerror="this.remove()">
             </div>
-            <h3><span class="placeholder">[Navn]</span></h3>
-            <p><span class="placeholder">[Rolle]</span></p>
+            <h3>Sandra</h3>
+            <p>Personal- og markeds&shy;ansvarlig</p>
           </li>
           <li class="member reveal" data-delay="2">
             <div class="member__photo">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              <img class="photo-cover" src="team-3.jpg" alt="" onerror="this.remove()">
+              <span class="member__initials" aria-hidden="true">L</span>
+              <img class="photo-cover" src="leah.jpg" alt="Leah" onerror="this.remove()">
             </div>
-            <h3><span class="placeholder">[Navn]</span></h3>
-            <p><span class="placeholder">[Rolle]</span></p>
+            <h3>Leah</h3>
+            <p>Produksjons- og innkjøps&shy;ansvarlig</p>
           </li>
           <li class="member reveal" data-delay="3">
             <div class="member__photo">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              <img class="photo-cover" src="team-4.jpg" alt="" onerror="this.remove()">
+              <span class="member__initials" aria-hidden="true">H</span>
+              <img class="photo-cover" src="hedda.jpg" alt="Hedda" onerror="this.remove()">
             </div>
-            <h3><span class="placeholder">[Navn]</span></h3>
-            <p><span class="placeholder">[Rolle]</span></p>
+            <h3>Hedda</h3>
+            <p>Bærekrafts- og salgs&shy;ansvarlig</p>
           </li>
           <li class="member reveal" data-delay="4">
             <div class="member__photo">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              <img class="photo-cover" src="team-5.jpg" alt="" onerror="this.remove()">
+              <span class="member__initials" aria-hidden="true">J</span>
+              <img class="photo-cover" src="julie.jpg" alt="Julie" onerror="this.remove()">
             </div>
-            <h3><span class="placeholder">[Navn]</span></h3>
-            <p><span class="placeholder">[Rolle]</span></p>
+            <h3>Julie</h3>
+            <p>Økonomi- og kommunikasjons&shy;ansvarlig</p>
           </li>
         </ul>
       </div>
@@ -1218,25 +1362,45 @@
         <div class="contact__info reveal">
           <span class="eyebrow">Kontakt</span>
           <h2 id="kontakt-tittel">Ta kontakt med oss</h2>
-          <p>Har du spørsmål om Sekketøylen, eller representerer du en skole eller bedrift? Send oss en melding.</p>
+          <p>Har du spørsmål om Sekketøylen eller en bestilling, eller representerer du en skole eller bedrift? Ta kontakt med en av oss direkte, eller send en melding.</p>
 
-          <!-- KONTAKTINFORMASJON – bytt ut plassholderne -->
-          <ul class="contact__list">
-            <li>
-              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></span>
-              <div><small>E-post</small><span class="placeholder">[e-postadresse]</span></div>
+          <ul class="people">
+            <li class="person">
+              <span class="person__avatar" aria-hidden="true">JL</span>
+              <div>
+                <h3>Jon Leon Robstad</h3>
+                <p class="person__role">Daglig leder</p>
+                <div class="person__links">
+                  <a href="mailto:robstadjonleon@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>robstadjonleon@gmail.com</a>
+                  <a href="tel:+4790747385"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>907 47 385</a>
+                </div>
+              </div>
             </li>
-            <li>
-              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-              <div><small>Telefon</small><span class="placeholder">[telefonnummer]</span></div>
+            <li class="person">
+              <span class="person__avatar" aria-hidden="true">LH</span>
+              <div>
+                <h3>Leah Tverå Homme</h3>
+                <p class="person__role">Produksjonsansvarlig</p>
+                <div class="person__links">
+                  <a href="mailto:leahhomme@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>leahhomme@gmail.com</a>
+                  <a href="tel:+4748395235"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>483 95 235</a>
+                </div>
+              </div>
             </li>
           </ul>
 
-          <!-- SOSIALE MEDIER – bytt href="#" med lenker til profilene, fjern de dere ikke bruker -->
-          <div class="socials">
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
-            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 5"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+          <div class="follow">
+            <h3>Følg oss</h3>
+            <div class="follow__links">
+              <a class="social-pill" href="https://www.instagram.com/sekketoylen.ub/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+                Instagram <span aria-hidden="true">·</span> @sekketoylen.ub
+              </a>
+              <a class="social-pill" href="https://www.tiktok.com/@sekketoylen.ub" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 5"/></svg>
+                TikTok <span aria-hidden="true">·</span> @sekketoylen.ub
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1257,6 +1421,7 @@
             <label for="henvendelse">Hva gjelder det?</label>
             <select id="henvendelse" name="henvendelse">
               <option value="sporsmal">Spørsmål om Sekketøylen</option>
+              <option value="bestilling">Spørsmål om en bestilling</option>
               <option value="bedrift">Bedrift, skole eller organisasjon</option>
               <option value="annet">Annet</option>
             </select>
@@ -1284,14 +1449,11 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="#hjem" class="logo logo--light" aria-label="Sekketøylen – til toppen">
-            <svg class="logo__mark" viewBox="0 0 36 36" aria-hidden="true">
-              <rect class="logo__bg" width="36" height="36" rx="10"/>
-              <path class="logo__hook" d="M14 8v9a5.5 5.5 0 0 0 5.5 5.5h0a4 4 0 0 1 0 8" fill="none" stroke-width="3.2" stroke-linecap="round"/>
-            </svg>
-            <span>Sekketøylen</span>
+          <a href="#hjem" class="logo" aria-label="Sekketøylen – til toppen">
+            <img class="logo__img" src="data:image/webp;base64,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" alt="" width="64" height="64">
+            <span class="logo__word">sekketøylen</span>
           </a>
-          <p class="footer__about">Den smarte kroken som holder sekken eller vesken unna gulvet og gir bedre plass rundt pulten. I plast eller metall.</p>
+          <p class="footer__about">Den smarte kroken som holder sekken eller vesken unna gulvet og gir bedre plass rundt pulten.</p>
           <p class="footer__alt">Også skrevet Sekketoylen.</p>
         </div>
 
@@ -1311,23 +1473,24 @@
         <div>
           <h4>Kontakt</h4>
           <ul class="footer__links">
-            <li><span class="placeholder">[e-postadresse]</span></li>
-            <li><span class="placeholder">[telefonnummer]</span></li>
+            <li><span>Jon Leon Robstad</span> <span class="muted">· Daglig leder</span></li>
+            <li><a href="mailto:robstadjonleon@gmail.com">robstadjonleon@gmail.com</a></li>
+            <li><a href="tel:+4790747385">907 47 385</a></li>
+            <li><span class="muted">Vipps: <span data-vipps>93989</span></span></li>
           </ul>
         </div>
 
         <div>
           <h4>Følg oss</h4>
-          <div class="socials">
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
-            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 5"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/sekketoylen.ub/" target="_blank" rel="noopener" aria-label="Sekketøylen på Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@sekketoylen.ub" target="_blank" rel="noopener" aria-label="Sekketøylen på TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 5"/></svg></a>
           </div>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <span>© <span id="aar">2026</span> Sekketøylen. Alle rettigheter reservert.</span>
+        <span>© <span id="aar">2026</span> Sekketøylen UB. Alle rettigheter reservert.</span>
         <a href="#hjem">Til toppen ↑</a>
       </div>
     </div>
@@ -1338,21 +1501,22 @@
        ========================================================= -->
   <script>
     /* =========================================================
-       INNSTILLINGER – FYLL INN HER
+       INNSTILLINGER – ENDRE HER
        ---------------------------------------------------------
-       priser:    pris i hele kroner per stk., f.eks. 149
-       epost:     adressen bestillinger og meldinger skal sendes til
-       skjemaUrl: (valgfritt) adresse til en skjematjeneste, f.eks.
-                  'https://formspree.io/f/xxxxxx'. Er den fylt inn,
-                  sendes bestillingen direkte fra nettsiden. Er den tom,
-                  åpnes kundens e-postprogram med bestillingen ferdig utfylt.
+       priser.plast:  pris i hele kroner per stk., f.eks. 149
+       vipps:         Vipps-nummeret som vises på siden
+       bestillingTil: hvem bestillinger sendes til
+       kontaktTil:    hvem meldinger fra kontaktskjemaet sendes til
+       skjemaUrl:     (valgfritt) adresse til en skjematjeneste, f.eks.
+                      'https://formspree.io/f/xxxxxx'. Er den fylt inn,
+                      sendes skjemaene direkte fra nettsiden. Er den tom,
+                      åpnes kundens e-postprogram med alt ferdig utfylt.
        ========================================================= */
     const INNSTILLINGER = {
-      priser: {
-        plast: null,   // f.eks. 149
-        metall: null   // f.eks. 249
-      },
-      epost: '',       // f.eks. 'post@sekketoylen.no'
+      priser: { plast: null },          // f.eks. { plast: 149 }
+      vipps: '93989',
+      bestillingTil: ['robstadjonleon@gmail.com', 'leahhomme@gmail.com'],
+      kontaktTil: ['robstadjonleon@gmail.com'],
       skjemaUrl: ''
     };
 
@@ -1363,6 +1527,8 @@
       const header = document.getElementById('header');
       const toggle = document.getElementById('navToggle');
       const menu = document.getElementById('navMenu');
+      const indicator = menu.querySelector('.nav__indicator');
+      const navLinks = Array.from(document.querySelectorAll('[data-nav]'));
       const mobileQuery = window.matchMedia('(max-width: 960px)');
 
       /* ---------- 1. Mobilmeny ---------- */
@@ -1378,7 +1544,6 @@
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
       });
-      mobileQuery.addEventListener('change', e => { if (!e.matches) setMenu(false); });
 
       /* ---------- 2. Header-skygge ved scroll ---------- */
       const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -1398,18 +1563,42 @@
         revealEls.forEach(el => el.classList.add('is-visible'));
       }
 
-      /* ---------- 4. Marker aktiv seksjon i menyen ---------- */
-      const navLinks = document.querySelectorAll('[data-nav]');
+      /* ---------- 4. Aktivt menypunkt med glidende ring ---------- */
+      let activeLink = navLinks[0];
+
+      function placeIndicator(animate) {
+        if (!activeLink || mobileQuery.matches) return;
+        const m = menu.getBoundingClientRect();
+        const r = activeLink.getBoundingClientRect();
+        if (!animate) indicator.classList.add('no-anim');
+        indicator.style.width = r.width + 'px';
+        indicator.style.setProperty('--ind-x', (r.left - m.left) + 'px');
+        indicator.classList.add('is-visible');
+        if (!animate) { void indicator.offsetWidth; indicator.classList.remove('no-anim'); }
+      }
+
+      function setActive(link) {
+        activeLink = link;
+        navLinks.forEach(l => {
+          const on = l === link;
+          l.classList.toggle('is-active', on);
+          if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
+        });
+        placeIndicator(true);
+      }
+
+      setActive(navLinks[0]);
+      placeIndicator(false);
+      window.addEventListener('resize', () => placeIndicator(false));
+      window.addEventListener('load', () => placeIndicator(false));
+      mobileQuery.addEventListener('change', e => { if (!e.matches) { setMenu(false); placeIndicator(false); } });
+
       if ('IntersectionObserver' in window) {
         const sectionObserver = new IntersectionObserver(entries => {
           entries.forEach(entry => {
             if (!entry.isIntersecting) return;
-            const id = '#' + entry.target.id;
-            navLinks.forEach(link => {
-              const active = link.getAttribute('href') === id;
-              link.classList.toggle('is-active', active);
-              if (active) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
-            });
+            const link = navLinks.find(l => l.getAttribute('href') === '#' + entry.target.id);
+            if (link && link !== activeLink) setActive(link);
           });
         }, { rootMargin: '-45% 0px -50% 0px' });
         navLinks.forEach(link => {
@@ -1427,7 +1616,24 @@
         });
       });
 
-      /* ---------- 6. Bestilling: variant, antall og oppsummering ---------- */
+      /* ---------- 6. Vipps-nummer: vis fra innstillinger + kopier-knapp ---------- */
+      document.querySelectorAll('[data-vipps]').forEach(el => { el.textContent = INNSTILLINGER.vipps; });
+      const copyBtn = document.querySelector('[data-copy-vipps]');
+      copyBtn.addEventListener('click', async () => {
+        let ok = false;
+        try { await navigator.clipboard.writeText(INNSTILLINGER.vipps); ok = true; }
+        catch (err) {
+          const t = document.createElement('textarea');
+          t.value = INNSTILLINGER.vipps; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+          document.body.appendChild(t); t.select();
+          try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+          t.remove();
+        }
+        copyBtn.textContent = ok ? 'Kopiert ✓' : 'Nummer: ' + INNSTILLINGER.vipps;
+        setTimeout(() => { copyBtn.textContent = 'Kopier nummer'; }, 2000);
+      });
+
+      /* ---------- 7. Bestilling: variant, antall og oppsummering ---------- */
       const orderForm = document.getElementById('bestillingsskjema');
       const qtyInput = document.getElementById('antall');
       const variantLabels = orderForm.querySelectorAll('.variant');
@@ -1440,7 +1646,6 @@
         return Math.min(99, Math.max(1, Number.isFinite(n) ? n : 1));
       };
 
-      // Vis prisene på variantkortene
       document.querySelectorAll('[data-pris]').forEach(el => { el.innerHTML = prisHTML(INNSTILLINGER.priser[el.dataset.pris]); });
 
       function oppdaterOppsummering() {
@@ -1462,24 +1667,33 @@
       qtyInput.addEventListener('blur', () => { qtyInput.value = antall(); oppdaterOppsummering(); });
       oppdaterOppsummering();
 
-      /* ---------- 7. Validering (felles for begge skjemaene) ---------- */
+      /* ---------- 8. Validering (felles for begge skjemaene) ---------- */
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+      function feilFor(input) {
+        const v = input.value.trim();
+        if (input.required && !v) {
+          return ({ email: 'Skriv inn e-postadressen din.', tel: 'Skriv inn telefonnummeret ditt.' })[input.type] || 'Dette feltet må fylles ut.';
+        }
+        if (!v) return '';
+        if (input.type === 'email' && !emailPattern.test(v)) return 'Sjekk at e-postadressen er riktig.';
+        if (input.type === 'tel' && v.replace(/\D/g, '').length < 8) return 'Sjekk at telefonnummeret er riktig.';
+        if (input.dataset.validate === 'postnr' && !/^\d{4}$/.test(v)) return 'Postnummeret skal ha fire sifre.';
+        return '';
+      }
 
       function setError(input, message) {
         const field = input.closest('.field');
         const errorEl = document.getElementById(input.id + '-feil');
-        field.classList.toggle('has-error', Boolean(message));
+        if (field) field.classList.toggle('has-error', Boolean(message));
         input.setAttribute('aria-invalid', message ? 'true' : 'false');
         if (errorEl) errorEl.textContent = message;
       }
 
       function validate(form) {
         let firstInvalid = null;
-        form.querySelectorAll('[required]').forEach(input => {
-          const value = input.value.trim();
-          let msg = '';
-          if (!value) msg = input.type === 'email' ? 'Skriv inn e-postadressen din.' : 'Dette feltet må fylles ut.';
-          else if (input.type === 'email' && !emailPattern.test(value)) msg = 'Sjekk at e-postadressen er riktig.';
+        form.querySelectorAll('input[required], textarea[required]').forEach(input => {
+          const msg = feilFor(input);
           setError(input, msg);
           if (msg && !firstInvalid) firstInvalid = input;
         });
@@ -1487,11 +1701,11 @@
       }
 
       document.querySelectorAll('form [required]').forEach(input => {
-        input.addEventListener('input', () => { if (input.getAttribute('aria-invalid') === 'true') validate(input.form); });
+        input.addEventListener('input', () => { if (input.getAttribute('aria-invalid') === 'true') setError(input, feilFor(input)); });
       });
 
-      /* ---------- 8. Sending: skjematjeneste hvis satt opp, ellers e-post ---------- */
-      async function send(subject, data) {
+      /* ---------- 9. Sending: skjematjeneste hvis satt opp, ellers e-post ---------- */
+      async function send(to, subject, data) {
         if (INNSTILLINGER.skjemaUrl) {
           const res = await fetch(INNSTILLINGER.skjemaUrl, {
             method: 'POST',
@@ -1501,13 +1715,10 @@
           if (!res.ok) throw new Error('Sending feilet');
           return 'sendt';
         }
-        if (INNSTILLINGER.epost) {
-          const body = Object.entries(data).map(([k, v]) => k + ': ' + v).join('\n');
-          window.location.href = 'mailto:' + INNSTILLINGER.epost +
-            '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-          return 'epost';
-        }
-        return 'mangler';
+        const body = Object.entries(data).map(([k, v]) => k + ': ' + v).join('\n');
+        window.location.href = 'mailto:' + to.join(',') +
+          '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        return 'epost';
       }
 
       function visStatus(box, type, text) {
@@ -1526,54 +1737,63 @@
         const button = form.querySelector('button[type="submit"]');
         button.disabled = true;
         try {
-          const { subject, data } = buildMessage();
-          const result = await send(subject, data);
+          const { to, subject, data } = buildMessage();
+          const result = await send(to, subject, data);
           if (result === 'sendt') { visStatus(statusBox, 'success', texts.sendt); form.reset(); }
-          else if (result === 'epost') { visStatus(statusBox, 'success', texts.epost); }
-          else { visStatus(statusBox, 'error', 'Beklager, dette kan ikke sendes akkurat nå. Prøv igjen senere.'); }
+          else { visStatus(statusBox, 'success', texts.epost); }
         } catch (err) {
-          visStatus(statusBox, 'error', 'Noe gikk galt under sendingen. Prøv igjen om litt.');
+          visStatus(statusBox, 'error', 'Noe gikk galt under sendingen. Prøv igjen om litt, eller kontakt oss direkte.');
         } finally {
           button.disabled = false;
           if (form === orderForm) oppdaterOppsummering();
         }
       }
 
-      /* ---------- 9. Bestillingsskjema ---------- */
+      /* ---------- 10. Bestillingsskjema ---------- */
       orderForm.addEventListener('submit', e => {
         e.preventDefault();
+        const vipps = INNSTILLINGER.vipps;
         handleSubmit(orderForm, document.getElementById('bestillingStatus'), () => {
           const v = valgtVariant(), n = antall(), pris = INNSTILLINGER.priser[v];
-          const data = {
-            Variant: VARIANTNAVN[v],
-            Antall: n,
-            'Pris per stk.': typeof pris === 'number' ? formatKr(pris) : '-',
-            Totalt: typeof pris === 'number' ? formatKr(pris * n) : '-',
-            Navn: orderForm.navn.value.trim(),
-            'E-post': orderForm.epost.value.trim(),
-            Telefon: orderForm.telefon.value.trim() || '-',
-            Kommentar: orderForm.kommentar.value.trim() || '-'
+          const f = orderForm.elements;
+          return {
+            to: INNSTILLINGER.bestillingTil,
+            subject: 'Bestilling: ' + n + ' × ' + VARIANTNAVN[v],
+            data: {
+              Produkt: VARIANTNAVN[v],
+              Antall: n,
+              'Pris per stk.': typeof pris === 'number' ? formatKr(pris) : '-',
+              Totalt: typeof pris === 'number' ? formatKr(pris * n) : '-',
+              Navn: f.navn.value.trim(),
+              'E-post': f.epost.value.trim(),
+              Telefon: f.telefon.value.trim(),
+              Adresse: f.adresse.value.trim(),
+              Postnummer: f.postnr.value.trim(),
+              Poststed: f.poststed.value.trim(),
+              Kommentar: f.kommentar.value.trim() || '-',
+              Betaling: 'Vipps til ' + vipps
+            }
           };
-          return { subject: 'Bestilling: ' + n + ' × ' + VARIANTNAVN[v], data };
         }, {
-          sendt: 'Takk for bestillingen! Vi tar kontakt på e-post for å bekrefte den og avtale betaling og levering.',
-          epost: 'E-postprogrammet ditt åpnes nå med bestillingen ferdig utfylt. Trykk «Send» der for å fullføre.'
+          sendt: 'Takk for bestillingen! Betal totalbeløpet med Vipps til ' + vipps + ' og skriv navnet ditt i meldingen. Vi tar kontakt for å bekrefte bestillingen.',
+          epost: 'E-postprogrammet ditt åpnes nå med bestillingen ferdig utfylt. Trykk «Send» der, og betal deretter med Vipps til ' + vipps + '.'
         });
       });
 
-      /* ---------- 10. Kontaktskjema ---------- */
+      /* ---------- 11. Kontaktskjema ---------- */
       const contactForm = document.getElementById('kontaktskjema');
       contactForm.addEventListener('submit', e => {
         e.preventDefault();
         handleSubmit(contactForm, document.getElementById('kontaktStatus'), () => {
           const type = topicSelect.options[topicSelect.selectedIndex].text;
           return {
+            to: INNSTILLINGER.kontaktTil,
             subject: 'Henvendelse fra nettsiden: ' + type,
             data: {
-              Navn: contactForm.navn.value.trim(),
-              'E-post': contactForm.epost.value.trim(),
+              Navn: contactForm.elements.navn.value.trim(),
+              'E-post': contactForm.elements.epost.value.trim(),
               Gjelder: type,
-              Melding: contactForm.melding.value.trim()
+              Melding: contactForm.elements.melding.value.trim()
             }
           };
         }, {
@@ -1582,7 +1802,7 @@
         });
       });
 
-      /* ---------- 11. Årstall i footer ---------- */
+      /* ---------- 12. Årstall i footer ---------- */
       document.getElementById('aar').textContent = new Date().getFullYear();
     })();
   </script>
